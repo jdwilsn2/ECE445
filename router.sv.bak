@@ -1,9 +1,0 @@
-module router(input [1:0] a_mux, b_mux, c_mux, d_mux,
-								  a_demux, b_demux, c_demux, d_demux,
-				  input 	     a_pedal, b_pedal, c_pedal, d_pedal,
-				  input [23:0] audio_in,
-				  output [23:0] audio_out
-);
-
-
-endmodule 

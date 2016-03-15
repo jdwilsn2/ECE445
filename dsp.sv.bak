@@ -1,4 +1,0 @@
-module dsp(input [23:0] in,
-			  output logic [23:0] out);
-			  
-endmodule 

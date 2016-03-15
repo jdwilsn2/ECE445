@@ -1,2 +1,0 @@
-module dsp_pedal (input [23:0] pedal_in,
-					   
