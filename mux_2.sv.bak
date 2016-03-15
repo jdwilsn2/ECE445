@@ -1,0 +1,6 @@
+module mux_2 (input [23:0] ,
+				  input sel,
+				  output logic [23:0] out);
+				  
+				  
+endmodule 

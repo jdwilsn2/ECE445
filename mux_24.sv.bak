@@ -1,0 +1,5 @@
+module mux_24 (input [23:0] in,
+					input [1:0] sel,
+					output [23:0] out);
+					
+endmodule 
