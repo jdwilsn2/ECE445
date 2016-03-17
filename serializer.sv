@@ -38,7 +38,7 @@ always @ (posedge BCK or posedge begin_transmit)
 begin
 	if (begin_transmit)
 	begin
-	count <= 5'h00;
+	count <= 5'b10111;
 	end
 	if (LRCK == 1) //left channel
 	begin
@@ -49,12 +49,12 @@ begin
 		out = right[count];
 	end
 	
-	if (count == 5'b10111) //last one
+	if (count == 5'h00) //last one
 	begin
-	count <= 5'h00;
+	count <= 5'b10111;
 	end
 	else
-	count = count + 1;
+	count = count - 1;
 end
 
 

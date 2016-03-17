@@ -40,7 +40,7 @@ always @(posedge BCK or posedge begin_receive)
 begin
 	if(begin_receive)
 	begin
-		count <= 5'h00;
+		count <= 5'b10111;
 	end
 	
 	if (LRCK == 1)
@@ -52,14 +52,14 @@ begin
 		running_right[count] <= in; //right channel
 	end
 	
-	if (count == 5'b10111) //last one
+	if (count == 5'h00) //last one
 	begin
-	count <= 5'h00;
+	count <= 5'b10111;
 	left <= running_left;
 	right <= running_right;
 	end
 	else
-	count = count + 1;
+	count = count - 1;
 end
 
 endmodule : deserializer
