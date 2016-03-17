@@ -8,7 +8,6 @@ module serializer
 	output BCK,
 	output out
 );
-
 /*
 BCK = 48*f_s = SCK / 8
 LRCK = f_s
@@ -33,6 +32,9 @@ clk_div_2N div_384 #(.WIDTH(8), .N(9'd192)) //Since you do a division by 2N, 192
 );
 
 logic [4:0] count; // count from 00000 to 10111 (24)
+logic old_lrck, lr_rise, lr_fall;
+assign lr_rise = (LRCK & !old_lrck);
+assign lr_fall = (old_lrck & !LRCK);
 
 always @ (posedge BCK or posedge begin_transmit)
 begin
@@ -40,11 +42,11 @@ begin
 	begin
 	count <= 5'b10111;
 	end
-	if (LRCK == 1) //left channel
+	if (lr_rise) //left channel
 	begin
 		out <= left[count];
 	end
-	else if (LRCK == 0) //right channel
+	else if (lr_fall) //right channel
 	begin
 		out = right[count];
 	end

@@ -33,8 +33,9 @@ clk_div_2N div_384 #(.WIDTH(8), .N(9'd192)) //Since you do a division by 2N, 192
 );
 
 logic [4:0] count;
-
-
+logic old_lrck, lr_rise, lr_fall;
+assign lr_rise = (LRCK & !old_lrck);
+assign lr_fall = (old_lrck & !LRCK);
 
 always @(posedge BCK or posedge begin_receive)
 begin
@@ -43,11 +44,11 @@ begin
 		count <= 5'b10111;
 	end
 	
-	if (LRCK == 1)
+	if (lr_rise)
 	begin
 		running_left[count] <= in; //left channel
 	end
-	else if (LRCK == 0)
+	else if (lr_fall)
 	begin
 		running_right[count] <= in; //right channel
 	end
