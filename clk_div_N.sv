@@ -29,4 +29,4 @@ end
 assign next = count + 1;
 assign clk_out = running_clk;
 
-endmodule : clk_div_N
+endmodule : clk_div_2N

@@ -25,9 +25,9 @@ clk_div_2N div_8 //Divide SCK by 8 to get BCK, set defaults to 8
 .clk_out(BCK)
 );
 
-clk_div_2N div_384 #(.WIDTH(8), .N(9'd192)) //Since you do a division by 2N, 192 * 2 = 384
+clk_div_2N  #(.WIDTH(8), .N(9'd192)) div_384 //Since you do a division by 2N, 192 * 2 = 384
 (
-.clk(SCK)
+.clk(SCK),
 .reset(begin_receive),
 .clk_out(LRCK)
 );
