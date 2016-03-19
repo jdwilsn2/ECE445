@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at serializer.sv(39): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at deserializer.sv(40): always construct contains both blocking and non-blocking assignments

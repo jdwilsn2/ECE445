@@ -1,0 +1,482 @@
+Analysis & Synthesis report for Final_Project
+Fri Mar 18 23:36:18 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Logic Cells Representing Combinational Loops
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "router:route|demux_24:demux_c"
+ 12. Port Connectivity Checks: "router:route|mux_24:mux_c"
+ 13. Port Connectivity Checks: "router:route|demux_24:demux_b"
+ 14. Port Connectivity Checks: "router:route|mux_24:mux_b"
+ 15. Port Connectivity Checks: "router:route|demux_24:demux_a"
+ 16. Port Connectivity Checks: "router:route|mux_24:mux_a"
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                          ;
++------------------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Mar 18 23:36:18 2016            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; Final_Project                                    ;
+; Top-level Entity Name              ; dsp_route                                        ;
+; Family                             ; Cyclone II                                       ;
+; Total logic elements               ; 474                                              ;
+;     Total combinational functions  ; 474                                              ;
+;     Dedicated logic registers      ; 0                                                ;
+; Total registers                    ; 0                                                ;
+; Total pins                         ; 202                                              ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 0                                                ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total PLLs                         ; 0                                                ;
++------------------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; dsp_route          ; Final_Project      ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                              ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
+; router.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/router.sv         ;         ;
+; mux_24.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/mux_24.sv         ;         ;
+; demux_24.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/demux_24.sv       ;         ;
+; dsp_pedal.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/dsp_pedal.sv      ;         ;
+; dsp.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/dsp.sv            ;         ;
+; mux_2.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/mux_2.sv          ;         ;
+; router_control.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/router_control.sv ;         ;
+; dsp_route.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/dsp_route.sv      ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 474           ;
+;                                             ;               ;
+; Total combinational functions               ; 474           ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 228           ;
+;     -- 3 input functions                    ; 169           ;
+;     -- <=2 input functions                  ; 77            ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 360           ;
+;     -- arithmetic mode                      ; 114           ;
+;                                             ;               ;
+; Total registers                             ; 0             ;
+;     -- Dedicated logic registers            ; 0             ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 202           ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+; Maximum fan-out node                        ; route_case[1] ;
+; Maximum fan-out                             ; 84            ;
+; Total fan-out                               ; 1666          ;
+; Average fan-out                             ; 2.46          ;
++---------------------------------------------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
+; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Library Name ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
+; |dsp_route                  ; 474 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 202  ; 0            ; |dsp_route                                       ; work         ;
+;    |router:route|           ; 472 (48)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route                          ; work         ;
+;       |demux_24:demux_a|    ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|demux_24:demux_a         ; work         ;
+;       |demux_24:demux_b|    ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|demux_24:demux_b         ; work         ;
+;       |demux_24:demux_c|    ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|demux_24:demux_c         ; work         ;
+;       |dsp_pedal:a|         ; 73 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:a              ; work         ;
+;          |dsp:DSP|          ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:a|dsp:DSP      ; work         ;
+;          |mux_2:dspmux|     ; 49 (49)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:a|mux_2:dspmux ; work         ;
+;       |dsp_pedal:b|         ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:b              ; work         ;
+;          |dsp:DSP|          ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:b|dsp:DSP      ; work         ;
+;       |dsp_pedal:c|         ; 70 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:c              ; work         ;
+;          |dsp:DSP|          ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:c|dsp:DSP      ; work         ;
+;          |mux_2:dspmux|     ; 47 (47)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:c|mux_2:dspmux ; work         ;
+;       |mux_24:mux_a|        ; 50 (50)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|mux_24:mux_a             ; work         ;
+;       |mux_24:mux_b|        ; 51 (51)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|mux_24:mux_b             ; work         ;
+;       |mux_24:mux_c|        ; 77 (77)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|mux_24:mux_c             ; work         ;
+;    |router_control:control| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router_control:control                ; work         ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++--------------------------------------------------------+----+
+; Logic Cell Name                                        ;    ;
++--------------------------------------------------------+----+
+; router:route|dsp_pedal:a|mux_2:dspmux|out[0]~21        ;    ;
+; router:route|mux_24:mux_b|Mux23~0                      ;    ;
+; rtl~64                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[1]~20        ;    ;
+; router:route|mux_24:mux_b|Mux22~0                      ;    ;
+; rtl~61                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[2]~19        ;    ;
+; router:route|mux_24:mux_b|Mux21~0                      ;    ;
+; rtl~58                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[3]~18        ;    ;
+; router:route|mux_24:mux_b|Mux20~0                      ;    ;
+; rtl~55                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[4]~17        ;    ;
+; router:route|mux_24:mux_b|Mux19~0                      ;    ;
+; rtl~52                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[5]~16        ;    ;
+; router:route|mux_24:mux_b|Mux18~0                      ;    ;
+; rtl~49                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[6]~15        ;    ;
+; router:route|mux_24:mux_b|Mux17~0                      ;    ;
+; rtl~46                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[7]~14        ;    ;
+; router:route|mux_24:mux_b|Mux16~0                      ;    ;
+; rtl~43                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[8]~13        ;    ;
+; router:route|mux_24:mux_b|Mux15~0                      ;    ;
+; rtl~40                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[9]~12        ;    ;
+; router:route|mux_24:mux_b|Mux14~0                      ;    ;
+; rtl~37                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[10]~11       ;    ;
+; router:route|mux_24:mux_b|Mux13~0                      ;    ;
+; rtl~34                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[11]~10       ;    ;
+; router:route|mux_24:mux_b|Mux12~0                      ;    ;
+; rtl~31                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[12]~9        ;    ;
+; router:route|mux_24:mux_b|Mux11~0                      ;    ;
+; rtl~28                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[13]~8        ;    ;
+; router:route|mux_24:mux_b|Mux10~0                      ;    ;
+; rtl~25                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[14]~7        ;    ;
+; router:route|mux_24:mux_b|Mux9~0                       ;    ;
+; rtl~22                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[15]~6        ;    ;
+; router:route|mux_24:mux_b|Mux8~0                       ;    ;
+; rtl~19                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[16]~5        ;    ;
+; router:route|mux_24:mux_b|Mux7~0                       ;    ;
+; rtl~16                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[17]~4        ;    ;
+; router:route|mux_24:mux_b|Mux6~0                       ;    ;
+; rtl~13                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[18]~3        ;    ;
+; router:route|mux_24:mux_b|Mux5~0                       ;    ;
+; rtl~10                                                 ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[19]~2        ;    ;
+; router:route|mux_24:mux_b|Mux4~0                       ;    ;
+; rtl~7                                                  ;    ;
+; router:route|dsp_pedal:a|mux_2:dspmux|out[20]~1        ;    ;
+; router:route|mux_24:mux_b|Mux3~0                       ;    ;
+; rtl~4                                                  ;    ;
+; router:route|mux_24:mux_a|Mux2~0                       ;    ;
+; rtl~1                                                  ;    ;
+; router:route|dsp_pedal:b|mux_2:dspmux|out[21]~2        ;    ;
+; rtl~2                                                  ;    ;
+; router:route|mux_24:mux_c|Mux1~0                       ;    ;
+; rtl~0                                                  ;    ;
+; router:route|mux_24:mux_b|Mux1~0                       ;    ;
+; router:route|mux_24:mux_a|Mux0~0                       ;    ;
+; router:route|mux_24:mux_b|Mux0~0                       ;    ;
+; Number of logic cells representing combinational loops ; 72 ;
++--------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |dsp_route|router:route|dsp_pedal:a|mux_2:dspmux|out[19] ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |dsp_route|router:route|dsp_pedal:c|mux_2:dspmux|out[8]  ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |dsp_route|router:route|dsp_pedal:b|mux_2:dspmux|out[22] ;
+; 6:1                ; 24 bits   ; 96 LEs        ; 72 LEs               ; 24 LEs                 ; No         ; |dsp_route|router:route|mux_24:mux_b|Mux8                ;
+; 6:1                ; 24 bits   ; 96 LEs        ; 72 LEs               ; 24 LEs                 ; No         ; |dsp_route|router:route|mux_24:mux_c|Mux1                ;
+; 6:1                ; 24 bits   ; 96 LEs        ; 72 LEs               ; 24 LEs                 ; No         ; |dsp_route|router:route|mux_24:mux_a|Mux23               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "router:route|demux_24:demux_c" ;
++-------+--------+----------+-------------------------------+
+; Port  ; Type   ; Severity ; Details                       ;
++-------+--------+----------+-------------------------------+
+; out_d ; Output ; Info     ; Explicitly unconnected        ;
++-------+--------+----------+-------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "router:route|mux_24:mux_c" ;
++------+-------+----------+-----------------------------+
+; Port ; Type  ; Severity ; Details                     ;
++------+-------+----------+-----------------------------+
+; d    ; Input ; Info     ; Explicitly unconnected      ;
++------+-------+----------+-----------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "router:route|demux_24:demux_b" ;
++-------+--------+----------+-------------------------------+
+; Port  ; Type   ; Severity ; Details                       ;
++-------+--------+----------+-------------------------------+
+; out_d ; Output ; Info     ; Explicitly unconnected        ;
++-------+--------+----------+-------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "router:route|mux_24:mux_b" ;
++------+-------+----------+-----------------------------+
+; Port ; Type  ; Severity ; Details                     ;
++------+-------+----------+-----------------------------+
+; d    ; Input ; Info     ; Explicitly unconnected      ;
++------+-------+----------+-----------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "router:route|demux_24:demux_a" ;
++-------+--------+----------+-------------------------------+
+; Port  ; Type   ; Severity ; Details                       ;
++-------+--------+----------+-------------------------------+
+; out_d ; Output ; Info     ; Explicitly unconnected        ;
++-------+--------+----------+-------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "router:route|mux_24:mux_a" ;
++------+-------+----------+-----------------------------+
+; Port ; Type  ; Severity ; Details                     ;
++------+-------+----------+-----------------------------+
+; d    ; Input ; Info     ; Explicitly unconnected      ;
++------+-------+----------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Fri Mar 18 23:36:13 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Final_Project -c Final_Project
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file clk_pll/synthesis/clk_pll.v
+    Info (12023): Found entity 1: clk_pll
+Info (12021): Found 1 design units, including 1 entities, in source file serializer.sv
+    Info (12023): Found entity 1: serializer
+Info (12021): Found 1 design units, including 1 entities, in source file deserializer.sv
+    Info (12023): Found entity 1: deserializer
+Info (12021): Found 1 design units, including 1 entities, in source file clk_div_n.sv
+    Info (12023): Found entity 1: clk_div_2N
+Info (12021): Found 1 design units, including 1 entities, in source file router.sv
+    Info (12023): Found entity 1: router
+Info (12021): Found 1 design units, including 1 entities, in source file mux_24.sv
+    Info (12023): Found entity 1: mux_24
+Info (12021): Found 1 design units, including 1 entities, in source file demux_24.sv
+    Info (12023): Found entity 1: demux_24
+Info (12021): Found 1 design units, including 1 entities, in source file dsp_pedal.sv
+    Info (12023): Found entity 1: dsp_pedal
+Info (12021): Found 1 design units, including 1 entities, in source file dsp.sv
+    Info (12023): Found entity 1: dsp
+Info (12021): Found 1 design units, including 1 entities, in source file mux_2.sv
+    Info (12023): Found entity 1: mux_2
+Info (12021): Found 1 design units, including 1 entities, in source file router_control.sv
+    Info (12023): Found entity 1: router_control
+Info (12021): Found 1 design units, including 1 entities, in source file dsp_route.sv
+    Info (12023): Found entity 1: dsp_route
+Info (12021): Found 1 design units, including 1 entities, in source file testbench.sv
+    Info (12023): Found entity 1: testbench
+Info (12127): Elaborating entity "dsp_route" for the top level hierarchy
+Info (12128): Elaborating entity "router" for hierarchy "router:route"
+Info (12128): Elaborating entity "mux_24" for hierarchy "router:route|mux_24:mux_a"
+Info (12128): Elaborating entity "dsp_pedal" for hierarchy "router:route|dsp_pedal:a"
+Info (12128): Elaborating entity "dsp" for hierarchy "router:route|dsp_pedal:a|dsp:DSP"
+Info (12128): Elaborating entity "mux_2" for hierarchy "router:route|dsp_pedal:a|mux_2:dspmux"
+Info (12128): Elaborating entity "demux_24" for hierarchy "router:route|demux_24:demux_a"
+Info (12128): Elaborating entity "router_control" for hierarchy "router_control:control"
+Info (144001): Generated suppressed messages file C:/Users/Justin/Documents/GitHub/ECE445/output_files/Final_Project.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk"
+Info (21057): Implemented 676 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 106 input pins
+    Info (21059): Implemented 96 output pins
+    Info (21061): Implemented 474 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 498 megabytes
+    Info: Processing ended: Fri Mar 18 23:36:18 2016
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Justin/Documents/GitHub/ECE445/output_files/Final_Project.map.smsg.
+
+
