@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Fri Mar 18 23:36:18 2016
+Analysis & Synthesis Status : Successful - Mon Mar 28 11:16:45 2016
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : Final_Project
-Top-level Entity Name : dsp_route
+Top-level Entity Name : test
 Family : Cyclone II
-Total logic elements : 474
-    Total combinational functions : 474
-    Dedicated logic registers : 0
-Total registers : 0
-Total pins : 202
+Total logic elements : 19
+    Total combinational functions : 19
+    Dedicated logic registers : 14
+Total registers : 14
+Total pins : 51
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
-Total PLLs : 0
+Total PLLs : 1

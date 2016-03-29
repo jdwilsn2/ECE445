@@ -13,9 +13,9 @@ choice = get_data("Main");
    
  switch (choice)
  {
-     1: route_menu();
+    case 1: route_menu();
           break;
-     2: adjust_menu();
+    case 2: adjust_menu();
           break;
      default: return -1;
                     break;

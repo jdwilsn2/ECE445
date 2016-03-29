@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Final_Project
-Fri Mar 18 23:36:18 2016
+Mon Mar 28 11:16:45 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -13,18 +13,27 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Logic Cells Representing Combinational Loops
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Port Connectivity Checks: "router:route|demux_24:demux_c"
- 12. Port Connectivity Checks: "router:route|mux_24:mux_c"
- 13. Port Connectivity Checks: "router:route|demux_24:demux_b"
- 14. Port Connectivity Checks: "router:route|mux_24:mux_b"
- 15. Port Connectivity Checks: "router:route|demux_24:demux_a"
- 16. Port Connectivity Checks: "router:route|mux_24:mux_a"
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
- 19. Analysis & Synthesis Suppressed Messages
+  8. Analysis & Synthesis IP Cores Summary
+  9. State Machine - |test|dac_adc_test_ctrl:test1|state
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0
+ 15. Source assignments for dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0|clk_pll_altpll_0_stdsync_sv6:stdsync2|clk_pll_altpll_0_dffpipe_l2c:dffpipe3
+ 16. Source assignments for dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 17. Parameter Settings for User Entity Instance: dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0|altpll:sd1
+ 18. Parameter Settings for User Entity Instance: dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller
+ 19. Parameter Settings for User Entity Instance: dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 20. Parameter Settings for User Entity Instance: dac_adc_test:test0|clk_div_2N:div_8
+ 21. Parameter Settings for User Entity Instance: dac_adc_test:test0|clk_div_2N:div_384
+ 22. altpll Parameter Settings by Entity Instance
+ 23. Port Connectivity Checks: "dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller"
+ 24. Port Connectivity Checks: "dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0"
+ 25. Port Connectivity Checks: "dac_adc_test:test0|clk_pll:dac_pll"
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -50,20 +59,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Mar 18 23:36:18 2016            ;
+; Analysis & Synthesis Status        ; Successful - Mon Mar 28 11:16:45 2016            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; Final_Project                                    ;
-; Top-level Entity Name              ; dsp_route                                        ;
+; Top-level Entity Name              ; test                                             ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 474                                              ;
-;     Total combinational functions  ; 474                                              ;
-;     Dedicated logic registers      ; 0                                                ;
-; Total registers                    ; 0                                                ;
-; Total pins                         ; 202                                              ;
+; Total logic elements               ; 19                                               ;
+;     Total combinational functions  ; 19                                               ;
+;     Dedicated logic registers      ; 14                                               ;
+; Total registers                    ; 14                                               ;
+; Total pins                         ; 51                                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0                                                ;
 ; Embedded Multiplier 9-bit elements ; 0                                                ;
-; Total PLLs                         ; 0                                                ;
+; Total PLLs                         ; 1                                                ;
 +------------------------------------+--------------------------------------------------+
 
 
@@ -73,7 +82,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; dsp_route          ; Final_Project      ;
+; Top-level entity name                                                      ; test               ; Final_Project      ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -169,158 +178,201 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                  ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                              ; Library ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
-; router.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/router.sv         ;         ;
-; mux_24.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/mux_24.sv         ;         ;
-; demux_24.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/demux_24.sv       ;         ;
-; dsp_pedal.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/dsp_pedal.sv      ;         ;
-; dsp.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/dsp.sv            ;         ;
-; mux_2.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/mux_2.sv          ;         ;
-; router_control.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/router_control.sv ;         ;
-; dsp_route.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/dsp_route.sv      ;         ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                 ;
++----------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                         ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                     ; Library ;
++----------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; clk_pll/synthesis/clk_pll.v                              ; yes             ; User Verilog HDL File        ; C:/Users/Justin/Documents/GitHub/ECE445/clk_pll/synthesis/clk_pll.v                              ;         ;
+; clk_pll/synthesis/submodules/altera_reset_controller.v   ; yes             ; User Verilog HDL File        ; C:/Users/Justin/Documents/GitHub/ECE445/clk_pll/synthesis/submodules/altera_reset_controller.v   ; clk_pll ;
+; clk_pll/synthesis/submodules/altera_reset_synchronizer.v ; yes             ; User Verilog HDL File        ; C:/Users/Justin/Documents/GitHub/ECE445/clk_pll/synthesis/submodules/altera_reset_synchronizer.v ; clk_pll ;
+; clk_pll/synthesis/submodules/clk_pll_altpll_0.v          ; yes             ; User Verilog HDL File        ; C:/Users/Justin/Documents/GitHub/ECE445/clk_pll/synthesis/submodules/clk_pll_altpll_0.v          ; clk_pll ;
+; serializer.sv                                            ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/serializer.sv                                            ;         ;
+; deserializer.sv                                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/deserializer.sv                                          ;         ;
+; clk_div_N.sv                                             ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/clk_div_N.sv                                             ;         ;
+; dac_adc_test.sv                                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/dac_adc_test.sv                                          ;         ;
+; dac_adc_test_ctrl.sv                                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/dac_adc_test_ctrl.sv                                     ;         ;
+; test.sv                                                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/test.sv                                                  ;         ;
+; SEG7_LUT.sv                                              ; yes             ; User SystemVerilog HDL File  ; C:/Users/Justin/Documents/GitHub/ECE445/SEG7_LUT.sv                                              ;         ;
+; altpll.tdf                                               ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                                     ;         ;
+; aglobal130.inc                                           ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                                 ;         ;
+; stratix_pll.inc                                          ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc                                ;         ;
+; stratixii_pll.inc                                        ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc                              ;         ;
+; cycloneii_pll.inc                                        ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc                              ;         ;
++----------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                 ;
-+---------------------------------------------+---------------+
-; Resource                                    ; Usage         ;
-+---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 474           ;
-;                                             ;               ;
-; Total combinational functions               ; 474           ;
-; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 228           ;
-;     -- 3 input functions                    ; 169           ;
-;     -- <=2 input functions                  ; 77            ;
-;                                             ;               ;
-; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 360           ;
-;     -- arithmetic mode                      ; 114           ;
-;                                             ;               ;
-; Total registers                             ; 0             ;
-;     -- Dedicated logic registers            ; 0             ;
-;     -- I/O registers                        ; 0             ;
-;                                             ;               ;
-; I/O pins                                    ; 202           ;
-; Embedded Multiplier 9-bit elements          ; 0             ;
-; Maximum fan-out node                        ; route_case[1] ;
-; Maximum fan-out                             ; 84            ;
-; Total fan-out                               ; 1666          ;
-; Average fan-out                             ; 2.46          ;
-+---------------------------------------------+---------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                 ;
++---------------------------------------------+-------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                         ;
++---------------------------------------------+-------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 19                                                                            ;
+;                                             ;                                                                               ;
+; Total combinational functions               ; 19                                                                            ;
+; Logic element usage by number of LUT inputs ;                                                                               ;
+;     -- 4 input functions                    ; 6                                                                             ;
+;     -- 3 input functions                    ; 2                                                                             ;
+;     -- <=2 input functions                  ; 11                                                                            ;
+;                                             ;                                                                               ;
+; Logic elements by mode                      ;                                                                               ;
+;     -- normal mode                          ; 12                                                                            ;
+;     -- arithmetic mode                      ; 7                                                                             ;
+;                                             ;                                                                               ;
+; Total registers                             ; 14                                                                            ;
+;     -- Dedicated logic registers            ; 14                                                                            ;
+;     -- I/O registers                        ; 0                                                                             ;
+;                                             ;                                                                               ;
+; I/O pins                                    ; 51                                                                            ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                             ;
+; Total PLLs                                  ; 1                                                                             ;
+;     -- PLLs                                 ; 1                                                                             ;
+;                                             ;                                                                               ;
+; Maximum fan-out node                        ; dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0|altpll:sd1|_clk0 ;
+; Maximum fan-out                             ; 12                                                                            ;
+; Total fan-out                               ; 94                                                                            ;
+; Average fan-out                             ; 1.11                                                                          ;
++---------------------------------------------+-------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
-+-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
-; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Library Name ;
-+-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
-; |dsp_route                  ; 474 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 202  ; 0            ; |dsp_route                                       ; work         ;
-;    |router:route|           ; 472 (48)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route                          ; work         ;
-;       |demux_24:demux_a|    ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|demux_24:demux_a         ; work         ;
-;       |demux_24:demux_b|    ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|demux_24:demux_b         ; work         ;
-;       |demux_24:demux_c|    ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|demux_24:demux_c         ; work         ;
-;       |dsp_pedal:a|         ; 73 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:a              ; work         ;
-;          |dsp:DSP|          ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:a|dsp:DSP      ; work         ;
-;          |mux_2:dspmux|     ; 49 (49)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:a|mux_2:dspmux ; work         ;
-;       |dsp_pedal:b|         ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:b              ; work         ;
-;          |dsp:DSP|          ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:b|dsp:DSP      ; work         ;
-;       |dsp_pedal:c|         ; 70 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:c              ; work         ;
-;          |dsp:DSP|          ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:c|dsp:DSP      ; work         ;
-;          |mux_2:dspmux|     ; 47 (47)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|dsp_pedal:c|mux_2:dspmux ; work         ;
-;       |mux_24:mux_a|        ; 50 (50)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|mux_24:mux_a             ; work         ;
-;       |mux_24:mux_b|        ; 51 (51)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|mux_24:mux_b             ; work         ;
-;       |mux_24:mux_c|        ; 77 (77)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router:route|mux_24:mux_c             ; work         ;
-;    |router_control:control| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dsp_route|router_control:control                ; work         ;
-+-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
++--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                           ; Library Name ;
++--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
+; |test                                ; 19 (0)            ; 14 (0)       ; 0           ; 0            ; 0       ; 0         ; 51   ; 0            ; |test                                                                         ; work         ;
+;    |dac_adc_test:test0|              ; 16 (0)            ; 11 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|dac_adc_test:test0                                                      ; work         ;
+;       |clk_div_2N:div_384|           ; 14 (14)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|dac_adc_test:test0|clk_div_2N:div_384                                   ; work         ;
+;       |clk_div_2N:div_8|             ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|dac_adc_test:test0|clk_div_2N:div_8                                     ; work         ;
+;       |clk_pll:dac_pll|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|dac_adc_test:test0|clk_pll:dac_pll                                      ; work         ;
+;          |clk_pll_altpll_0:altpll_0| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0            ; clk_pll      ;
+;             |altpll:sd1|             ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0|altpll:sd1 ; work         ;
+;    |dac_adc_test_ctrl:test1|         ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|dac_adc_test_ctrl:test1                                                 ; work         ;
++--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops                ;
-+--------------------------------------------------------+----+
-; Logic Cell Name                                        ;    ;
-+--------------------------------------------------------+----+
-; router:route|dsp_pedal:a|mux_2:dspmux|out[0]~21        ;    ;
-; router:route|mux_24:mux_b|Mux23~0                      ;    ;
-; rtl~64                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[1]~20        ;    ;
-; router:route|mux_24:mux_b|Mux22~0                      ;    ;
-; rtl~61                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[2]~19        ;    ;
-; router:route|mux_24:mux_b|Mux21~0                      ;    ;
-; rtl~58                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[3]~18        ;    ;
-; router:route|mux_24:mux_b|Mux20~0                      ;    ;
-; rtl~55                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[4]~17        ;    ;
-; router:route|mux_24:mux_b|Mux19~0                      ;    ;
-; rtl~52                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[5]~16        ;    ;
-; router:route|mux_24:mux_b|Mux18~0                      ;    ;
-; rtl~49                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[6]~15        ;    ;
-; router:route|mux_24:mux_b|Mux17~0                      ;    ;
-; rtl~46                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[7]~14        ;    ;
-; router:route|mux_24:mux_b|Mux16~0                      ;    ;
-; rtl~43                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[8]~13        ;    ;
-; router:route|mux_24:mux_b|Mux15~0                      ;    ;
-; rtl~40                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[9]~12        ;    ;
-; router:route|mux_24:mux_b|Mux14~0                      ;    ;
-; rtl~37                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[10]~11       ;    ;
-; router:route|mux_24:mux_b|Mux13~0                      ;    ;
-; rtl~34                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[11]~10       ;    ;
-; router:route|mux_24:mux_b|Mux12~0                      ;    ;
-; rtl~31                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[12]~9        ;    ;
-; router:route|mux_24:mux_b|Mux11~0                      ;    ;
-; rtl~28                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[13]~8        ;    ;
-; router:route|mux_24:mux_b|Mux10~0                      ;    ;
-; rtl~25                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[14]~7        ;    ;
-; router:route|mux_24:mux_b|Mux9~0                       ;    ;
-; rtl~22                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[15]~6        ;    ;
-; router:route|mux_24:mux_b|Mux8~0                       ;    ;
-; rtl~19                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[16]~5        ;    ;
-; router:route|mux_24:mux_b|Mux7~0                       ;    ;
-; rtl~16                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[17]~4        ;    ;
-; router:route|mux_24:mux_b|Mux6~0                       ;    ;
-; rtl~13                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[18]~3        ;    ;
-; router:route|mux_24:mux_b|Mux5~0                       ;    ;
-; rtl~10                                                 ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[19]~2        ;    ;
-; router:route|mux_24:mux_b|Mux4~0                       ;    ;
-; rtl~7                                                  ;    ;
-; router:route|dsp_pedal:a|mux_2:dspmux|out[20]~1        ;    ;
-; router:route|mux_24:mux_b|Mux3~0                       ;    ;
-; rtl~4                                                  ;    ;
-; router:route|mux_24:mux_a|Mux2~0                       ;    ;
-; rtl~1                                                  ;    ;
-; router:route|dsp_pedal:b|mux_2:dspmux|out[21]~2        ;    ;
-; rtl~2                                                  ;    ;
-; router:route|mux_24:mux_c|Mux1~0                       ;    ;
-; rtl~0                                                  ;    ;
-; router:route|mux_24:mux_b|Mux1~0                       ;    ;
-; router:route|mux_24:mux_a|Mux0~0                       ;    ;
-; router:route|mux_24:mux_b|Mux0~0                       ;    ;
-; Number of logic cells representing combinational loops ; 72 ;
-+--------------------------------------------------------+----+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                        ;
++--------+-------------------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------------------------------+
+; Vendor ; IP Core Name            ; Version ; Release Date ; License Type ; Entity Instance                                                                                                            ; IP Include File                      ;
++--------+-------------------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------------------------------+
+; Altera ; altpll                  ; 13.0    ; N/A          ; N/A          ; |test|dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0                                                         ; clk_pll/synthesis/../../clk_pll.qsys ;
+; Altera ; altera_reset_controller ; 13.0    ; N/A          ; N/A          ; |test|dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller                                            ; clk_pll/synthesis/../../clk_pll.qsys ;
+; Altera ; altpll                  ; 13.0    ; N/A          ; N/A          ; |test|dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1 ; clk_pll/synthesis/../../clk_pll.qsys ;
++--------+-------------------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------+
+; State Machine - |test|dac_adc_test_ctrl:test1|state          ;
++---------------+--------------+---------------+---------------+
+; Name          ; state.s_idle ; state.s_begin ; state.s_idle2 ;
++---------------+--------------+---------------+---------------+
+; state.s_idle  ; 0            ; 0             ; 0             ;
+; state.s_idle2 ; 1            ; 0             ; 1             ;
+; state.s_begin ; 1            ; 1             ; 0             ;
++---------------+--------------+---------------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                  ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+; Register name                                                                                                                                                 ; Reason for Removal                                                  ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+; dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out  ; Stuck at VCC due to stuck port preset                               ;
+; dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0,1] ; Lost fanout                                                         ;
+; dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0|prev_reset                                                                                       ; Stuck at GND due to stuck port clear                                ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[1]                                                                                                        ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[1,9,13]                                                                                                  ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[5]                                                                                                        ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[5]                                                                                                       ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[11,13]                                                                                                    ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[15,21,23]                                                                                                ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[7]                                                                                                        ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[11]                                                                                                      ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[15]                                                                                                       ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[7]                                                                                                       ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[3]                                                                                                        ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[3]                                                                                                       ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[19]                                                                                                       ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|serializer:to_DAC|out                                                                                                                      ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[12]                                                                                                       ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[22]                                                                                                      ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[10,18]                                                                                                    ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[16,19,20]                                                                                                ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[8]                                                                                                        ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[14]                                                                                                      ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[16]                                                                                                       ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[12]                                                                                                      ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[6]                                                                                                        ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[10]                                                                                                      ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[20]                                                                                                       ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[8]                                                                                                       ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[4]                                                                                                        ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[6]                                                                                                       ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[14]                                                                                                       ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[4]                                                                                                       ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[2]                                                                                                        ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[2]                                                                                                       ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[22]                                                                                                       ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[0]                                                                                                       ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[0]                                                                                                        ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[18]                                                                                                      ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[9,17,21]                                                                                                  ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|running_right[17]                                                                                                      ; Merged with dac_adc_test:test0|deserializer:to_ADC|running_left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[1..23]                                                                                                            ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[0]          ;
+; dac_adc_test:test0|deserializer:to_ADC|right[0..23]                                                                                                           ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[0]          ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[23]                                                                                                       ; Stuck at GND due to stuck port data_in                              ;
+; dac_adc_test:test0|deserializer:to_ADC|left[0]                                                                                                                ; Stuck at GND due to stuck port data_in                              ;
+; dac_adc_test_ctrl:test1|state~4                                                                                                                               ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~5                                                                                                                               ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~6                                                                                                                               ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~7                                                                                                                               ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~8                                                                                                                               ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~9                                                                                                                               ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~10                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~11                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~12                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~13                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~14                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~15                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~16                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~17                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~18                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~19                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~20                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~21                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~22                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~23                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~24                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~25                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~26                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~27                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~28                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~29                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~30                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~31                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~32                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test_ctrl:test1|state~33                                                                                                                              ; Lost fanout                                                         ;
+; dac_adc_test:test0|clk_div_2N:div_8|count[0]                                                                                                                  ; Merged with dac_adc_test:test0|clk_div_2N:div_384|count[0]          ;
+; dac_adc_test:test0|clk_div_2N:div_8|count[2]                                                                                                                  ; Stuck at GND due to stuck port data_in                              ;
+; Total Number of Removed Registers = 133                                                                                                                       ;                                                                     ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                                                                                                             ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                                                ; Reason for Removal        ; Registers Removed due to This Register                                                                                                                       ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out ; Stuck at VCC              ; dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0], ;
+;                                                                                                                                                              ; due to stuck port preset  ; dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1], ;
+;                                                                                                                                                              ;                           ; dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0|prev_reset,                                                                                     ;
+;                                                                                                                                                              ;                           ; dac_adc_test:test0|clk_div_2N:div_8|count[2]                                                                                                                 ;
+; dac_adc_test:test0|deserializer:to_ADC|running_left[23]                                                                                                      ; Stuck at GND              ; dac_adc_test:test0|deserializer:to_ADC|left[0]                                                                                                               ;
+;                                                                                                                                                              ; due to stuck port data_in ;                                                                                                                                                              ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -328,82 +380,537 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 14    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 11    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
-; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |dsp_route|router:route|dsp_pedal:a|mux_2:dspmux|out[19] ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |dsp_route|router:route|dsp_pedal:c|mux_2:dspmux|out[8]  ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |dsp_route|router:route|dsp_pedal:b|mux_2:dspmux|out[22] ;
-; 6:1                ; 24 bits   ; 96 LEs        ; 72 LEs               ; 24 LEs                 ; No         ; |dsp_route|router:route|mux_24:mux_b|Mux8                ;
-; 6:1                ; 24 bits   ; 96 LEs        ; 72 LEs               ; 24 LEs                 ; No         ; |dsp_route|router:route|mux_24:mux_c|Mux1                ;
-; 6:1                ; 24 bits   ; 96 LEs        ; 72 LEs               ; 24 LEs                 ; No         ; |dsp_route|router:route|mux_24:mux_a|Mux23               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |test|dac_adc_test_ctrl:test1|next_state ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 
 
-+-----------------------------------------------------------+
-; Port Connectivity Checks: "router:route|demux_24:demux_c" ;
-+-------+--------+----------+-------------------------------+
-; Port  ; Type   ; Severity ; Details                       ;
-+-------+--------+----------+-------------------------------+
-; out_d ; Output ; Info     ; Explicitly unconnected        ;
-+-------+--------+----------+-------------------------------+
++-------------------------------------------------------------------------------------+
+; Source assignments for dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0 ;
++----------------+-------+------+-----------------------------------------------------+
+; Assignment     ; Value ; From ; To                                                  ;
++----------------+-------+------+-----------------------------------------------------+
+; POWER_UP_LEVEL ; HIGH  ; -    ; pfdena_reg                                          ;
++----------------+-------+------+-----------------------------------------------------+
 
 
-+-------------------------------------------------------+
-; Port Connectivity Checks: "router:route|mux_24:mux_c" ;
-+------+-------+----------+-----------------------------+
-; Port ; Type  ; Severity ; Details                     ;
-+------+-------+----------+-----------------------------+
-; d    ; Input ; Info     ; Explicitly unconnected      ;
-+------+-------+----------+-----------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0|clk_pll_altpll_0_stdsync_sv6:stdsync2|clk_pll_altpll_0_dffpipe_l2c:dffpipe3 ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                                             ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                              ;
++---------------------------------+-------+------+----------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------+
-; Port Connectivity Checks: "router:route|demux_24:demux_b" ;
-+-------+--------+----------+-------------------------------+
-; Port  ; Type   ; Severity ; Details                       ;
-+-------+--------+----------+-------------------------------+
-; out_d ; Output ; Info     ; Explicitly unconnected        ;
-+-------+--------+----------+-------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1 ;
++-------------------+-------+------+----------------------------------------------------------------------------------------------------------+
+; Assignment        ; Value ; From ; To                                                                                                       ;
++-------------------+-------+------+----------------------------------------------------------------------------------------------------------+
+; PRESERVE_REGISTER ; on    ; -    ; altera_reset_synchronizer_int_chain[1]                                                                   ;
+; PRESERVE_REGISTER ; on    ; -    ; altera_reset_synchronizer_int_chain[0]                                                                   ;
++-------------------+-------+------+----------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------+
-; Port Connectivity Checks: "router:route|mux_24:mux_b" ;
-+------+-------+----------+-----------------------------+
-; Port ; Type  ; Severity ; Details                     ;
-+------+-------+----------+-----------------------------+
-; d    ; Input ; Info     ; Explicitly unconnected      ;
-+------+-------+----------+-----------------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0|altpll:sd1 ;
++-------------------------------+-------------------+------------------------------------------------------------------+
+; Parameter Name                ; Value             ; Type                                                             ;
++-------------------------------+-------------------+------------------------------------------------------------------+
+; OPERATION_MODE                ; normal            ; Untyped                                                          ;
+; PLL_TYPE                      ; AUTO              ; Untyped                                                          ;
+; LPM_HINT                      ; UNUSED            ; Untyped                                                          ;
+; QUALIFY_CONF_DONE             ; OFF               ; Untyped                                                          ;
+; COMPENSATE_CLOCK              ; CLK0              ; Untyped                                                          ;
+; SCAN_CHAIN                    ; LONG              ; Untyped                                                          ;
+; PRIMARY_CLOCK                 ; INCLK0            ; Untyped                                                          ;
+; INCLK0_INPUT_FREQUENCY        ; 20000             ; Signed Integer                                                   ;
+; INCLK1_INPUT_FREQUENCY        ; 0                 ; Untyped                                                          ;
+; GATE_LOCK_SIGNAL              ; NO                ; Untyped                                                          ;
+; GATE_LOCK_COUNTER             ; 0                 ; Untyped                                                          ;
+; LOCK_HIGH                     ; 1                 ; Untyped                                                          ;
+; LOCK_LOW                      ; 1                 ; Untyped                                                          ;
+; VALID_LOCK_MULTIPLIER         ; 1                 ; Untyped                                                          ;
+; INVALID_LOCK_MULTIPLIER       ; 5                 ; Untyped                                                          ;
+; SWITCH_OVER_ON_LOSSCLK        ; OFF               ; Untyped                                                          ;
+; SWITCH_OVER_ON_GATED_LOCK     ; OFF               ; Untyped                                                          ;
+; ENABLE_SWITCH_OVER_COUNTER    ; OFF               ; Untyped                                                          ;
+; SKIP_VCO                      ; OFF               ; Untyped                                                          ;
+; SWITCH_OVER_COUNTER           ; 0                 ; Untyped                                                          ;
+; SWITCH_OVER_TYPE              ; AUTO              ; Untyped                                                          ;
+; FEEDBACK_SOURCE               ; EXTCLK0           ; Untyped                                                          ;
+; BANDWIDTH                     ; 0                 ; Untyped                                                          ;
+; BANDWIDTH_TYPE                ; AUTO              ; Untyped                                                          ;
+; SPREAD_FREQUENCY              ; 0                 ; Untyped                                                          ;
+; DOWN_SPREAD                   ; 0                 ; Untyped                                                          ;
+; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF               ; Untyped                                                          ;
+; SELF_RESET_ON_LOSS_LOCK       ; OFF               ; Untyped                                                          ;
+; CLK9_MULTIPLY_BY              ; 0                 ; Untyped                                                          ;
+; CLK8_MULTIPLY_BY              ; 0                 ; Untyped                                                          ;
+; CLK7_MULTIPLY_BY              ; 0                 ; Untyped                                                          ;
+; CLK6_MULTIPLY_BY              ; 0                 ; Untyped                                                          ;
+; CLK5_MULTIPLY_BY              ; 1                 ; Untyped                                                          ;
+; CLK4_MULTIPLY_BY              ; 1                 ; Untyped                                                          ;
+; CLK3_MULTIPLY_BY              ; 1                 ; Untyped                                                          ;
+; CLK2_MULTIPLY_BY              ; 1                 ; Untyped                                                          ;
+; CLK1_MULTIPLY_BY              ; 1                 ; Untyped                                                          ;
+; CLK0_MULTIPLY_BY              ; 5292              ; Signed Integer                                                   ;
+; CLK9_DIVIDE_BY                ; 0                 ; Untyped                                                          ;
+; CLK8_DIVIDE_BY                ; 0                 ; Untyped                                                          ;
+; CLK7_DIVIDE_BY                ; 0                 ; Untyped                                                          ;
+; CLK6_DIVIDE_BY                ; 0                 ; Untyped                                                          ;
+; CLK5_DIVIDE_BY                ; 1                 ; Untyped                                                          ;
+; CLK4_DIVIDE_BY                ; 1                 ; Untyped                                                          ;
+; CLK3_DIVIDE_BY                ; 1                 ; Untyped                                                          ;
+; CLK2_DIVIDE_BY                ; 1                 ; Untyped                                                          ;
+; CLK1_DIVIDE_BY                ; 1                 ; Untyped                                                          ;
+; CLK0_DIVIDE_BY                ; 15625             ; Signed Integer                                                   ;
+; CLK9_PHASE_SHIFT              ; 0                 ; Untyped                                                          ;
+; CLK8_PHASE_SHIFT              ; 0                 ; Untyped                                                          ;
+; CLK7_PHASE_SHIFT              ; 0                 ; Untyped                                                          ;
+; CLK6_PHASE_SHIFT              ; 0                 ; Untyped                                                          ;
+; CLK5_PHASE_SHIFT              ; 0                 ; Untyped                                                          ;
+; CLK4_PHASE_SHIFT              ; 0                 ; Untyped                                                          ;
+; CLK3_PHASE_SHIFT              ; 0                 ; Untyped                                                          ;
+; CLK2_PHASE_SHIFT              ; 0                 ; Untyped                                                          ;
+; CLK1_PHASE_SHIFT              ; 0                 ; Untyped                                                          ;
+; CLK0_PHASE_SHIFT              ; 0                 ; Untyped                                                          ;
+; CLK5_TIME_DELAY               ; 0                 ; Untyped                                                          ;
+; CLK4_TIME_DELAY               ; 0                 ; Untyped                                                          ;
+; CLK3_TIME_DELAY               ; 0                 ; Untyped                                                          ;
+; CLK2_TIME_DELAY               ; 0                 ; Untyped                                                          ;
+; CLK1_TIME_DELAY               ; 0                 ; Untyped                                                          ;
+; CLK0_TIME_DELAY               ; 0                 ; Untyped                                                          ;
+; CLK9_DUTY_CYCLE               ; 50                ; Untyped                                                          ;
+; CLK8_DUTY_CYCLE               ; 50                ; Untyped                                                          ;
+; CLK7_DUTY_CYCLE               ; 50                ; Untyped                                                          ;
+; CLK6_DUTY_CYCLE               ; 50                ; Untyped                                                          ;
+; CLK5_DUTY_CYCLE               ; 50                ; Untyped                                                          ;
+; CLK4_DUTY_CYCLE               ; 50                ; Untyped                                                          ;
+; CLK3_DUTY_CYCLE               ; 50                ; Untyped                                                          ;
+; CLK2_DUTY_CYCLE               ; 50                ; Untyped                                                          ;
+; CLK1_DUTY_CYCLE               ; 50                ; Untyped                                                          ;
+; CLK0_DUTY_CYCLE               ; 50                ; Signed Integer                                                   ;
+; CLK9_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                          ;
+; CLK8_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                          ;
+; CLK7_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                          ;
+; CLK6_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                          ;
+; CLK5_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                          ;
+; CLK4_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                          ;
+; CLK3_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                          ;
+; CLK2_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                          ;
+; CLK1_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                          ;
+; CLK0_USE_EVEN_COUNTER_MODE    ; OFF               ; Untyped                                                          ;
+; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                          ;
+; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                          ;
+; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                          ;
+; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                          ;
+; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                          ;
+; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                          ;
+; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                          ;
+; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                          ;
+; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                          ;
+; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF               ; Untyped                                                          ;
+; LOCK_WINDOW_UI                ;  0.05             ; Untyped                                                          ;
+; LOCK_WINDOW_UI_BITS           ; UNUSED            ; Untyped                                                          ;
+; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED            ; Untyped                                                          ;
+; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED            ; Untyped                                                          ;
+; DPA_MULTIPLY_BY               ; 0                 ; Untyped                                                          ;
+; DPA_DIVIDE_BY                 ; 1                 ; Untyped                                                          ;
+; DPA_DIVIDER                   ; 0                 ; Untyped                                                          ;
+; EXTCLK3_MULTIPLY_BY           ; 1                 ; Untyped                                                          ;
+; EXTCLK2_MULTIPLY_BY           ; 1                 ; Untyped                                                          ;
+; EXTCLK1_MULTIPLY_BY           ; 1                 ; Untyped                                                          ;
+; EXTCLK0_MULTIPLY_BY           ; 1                 ; Untyped                                                          ;
+; EXTCLK3_DIVIDE_BY             ; 1                 ; Untyped                                                          ;
+; EXTCLK2_DIVIDE_BY             ; 1                 ; Untyped                                                          ;
+; EXTCLK1_DIVIDE_BY             ; 1                 ; Untyped                                                          ;
+; EXTCLK0_DIVIDE_BY             ; 1                 ; Untyped                                                          ;
+; EXTCLK3_PHASE_SHIFT           ; 0                 ; Untyped                                                          ;
+; EXTCLK2_PHASE_SHIFT           ; 0                 ; Untyped                                                          ;
+; EXTCLK1_PHASE_SHIFT           ; 0                 ; Untyped                                                          ;
+; EXTCLK0_PHASE_SHIFT           ; 0                 ; Untyped                                                          ;
+; EXTCLK3_TIME_DELAY            ; 0                 ; Untyped                                                          ;
+; EXTCLK2_TIME_DELAY            ; 0                 ; Untyped                                                          ;
+; EXTCLK1_TIME_DELAY            ; 0                 ; Untyped                                                          ;
+; EXTCLK0_TIME_DELAY            ; 0                 ; Untyped                                                          ;
+; EXTCLK3_DUTY_CYCLE            ; 50                ; Untyped                                                          ;
+; EXTCLK2_DUTY_CYCLE            ; 50                ; Untyped                                                          ;
+; EXTCLK1_DUTY_CYCLE            ; 50                ; Untyped                                                          ;
+; EXTCLK0_DUTY_CYCLE            ; 50                ; Untyped                                                          ;
+; VCO_MULTIPLY_BY               ; 0                 ; Untyped                                                          ;
+; VCO_DIVIDE_BY                 ; 0                 ; Untyped                                                          ;
+; SCLKOUT0_PHASE_SHIFT          ; 0                 ; Untyped                                                          ;
+; SCLKOUT1_PHASE_SHIFT          ; 0                 ; Untyped                                                          ;
+; VCO_MIN                       ; 0                 ; Untyped                                                          ;
+; VCO_MAX                       ; 0                 ; Untyped                                                          ;
+; VCO_CENTER                    ; 0                 ; Untyped                                                          ;
+; PFD_MIN                       ; 0                 ; Untyped                                                          ;
+; PFD_MAX                       ; 0                 ; Untyped                                                          ;
+; M_INITIAL                     ; 0                 ; Untyped                                                          ;
+; M                             ; 0                 ; Untyped                                                          ;
+; N                             ; 1                 ; Untyped                                                          ;
+; M2                            ; 1                 ; Untyped                                                          ;
+; N2                            ; 1                 ; Untyped                                                          ;
+; SS                            ; 1                 ; Untyped                                                          ;
+; C0_HIGH                       ; 0                 ; Untyped                                                          ;
+; C1_HIGH                       ; 0                 ; Untyped                                                          ;
+; C2_HIGH                       ; 0                 ; Untyped                                                          ;
+; C3_HIGH                       ; 0                 ; Untyped                                                          ;
+; C4_HIGH                       ; 0                 ; Untyped                                                          ;
+; C5_HIGH                       ; 0                 ; Untyped                                                          ;
+; C6_HIGH                       ; 0                 ; Untyped                                                          ;
+; C7_HIGH                       ; 0                 ; Untyped                                                          ;
+; C8_HIGH                       ; 0                 ; Untyped                                                          ;
+; C9_HIGH                       ; 0                 ; Untyped                                                          ;
+; C0_LOW                        ; 0                 ; Untyped                                                          ;
+; C1_LOW                        ; 0                 ; Untyped                                                          ;
+; C2_LOW                        ; 0                 ; Untyped                                                          ;
+; C3_LOW                        ; 0                 ; Untyped                                                          ;
+; C4_LOW                        ; 0                 ; Untyped                                                          ;
+; C5_LOW                        ; 0                 ; Untyped                                                          ;
+; C6_LOW                        ; 0                 ; Untyped                                                          ;
+; C7_LOW                        ; 0                 ; Untyped                                                          ;
+; C8_LOW                        ; 0                 ; Untyped                                                          ;
+; C9_LOW                        ; 0                 ; Untyped                                                          ;
+; C0_INITIAL                    ; 0                 ; Untyped                                                          ;
+; C1_INITIAL                    ; 0                 ; Untyped                                                          ;
+; C2_INITIAL                    ; 0                 ; Untyped                                                          ;
+; C3_INITIAL                    ; 0                 ; Untyped                                                          ;
+; C4_INITIAL                    ; 0                 ; Untyped                                                          ;
+; C5_INITIAL                    ; 0                 ; Untyped                                                          ;
+; C6_INITIAL                    ; 0                 ; Untyped                                                          ;
+; C7_INITIAL                    ; 0                 ; Untyped                                                          ;
+; C8_INITIAL                    ; 0                 ; Untyped                                                          ;
+; C9_INITIAL                    ; 0                 ; Untyped                                                          ;
+; C0_MODE                       ; BYPASS            ; Untyped                                                          ;
+; C1_MODE                       ; BYPASS            ; Untyped                                                          ;
+; C2_MODE                       ; BYPASS            ; Untyped                                                          ;
+; C3_MODE                       ; BYPASS            ; Untyped                                                          ;
+; C4_MODE                       ; BYPASS            ; Untyped                                                          ;
+; C5_MODE                       ; BYPASS            ; Untyped                                                          ;
+; C6_MODE                       ; BYPASS            ; Untyped                                                          ;
+; C7_MODE                       ; BYPASS            ; Untyped                                                          ;
+; C8_MODE                       ; BYPASS            ; Untyped                                                          ;
+; C9_MODE                       ; BYPASS            ; Untyped                                                          ;
+; C0_PH                         ; 0                 ; Untyped                                                          ;
+; C1_PH                         ; 0                 ; Untyped                                                          ;
+; C2_PH                         ; 0                 ; Untyped                                                          ;
+; C3_PH                         ; 0                 ; Untyped                                                          ;
+; C4_PH                         ; 0                 ; Untyped                                                          ;
+; C5_PH                         ; 0                 ; Untyped                                                          ;
+; C6_PH                         ; 0                 ; Untyped                                                          ;
+; C7_PH                         ; 0                 ; Untyped                                                          ;
+; C8_PH                         ; 0                 ; Untyped                                                          ;
+; C9_PH                         ; 0                 ; Untyped                                                          ;
+; L0_HIGH                       ; 1                 ; Untyped                                                          ;
+; L1_HIGH                       ; 1                 ; Untyped                                                          ;
+; G0_HIGH                       ; 1                 ; Untyped                                                          ;
+; G1_HIGH                       ; 1                 ; Untyped                                                          ;
+; G2_HIGH                       ; 1                 ; Untyped                                                          ;
+; G3_HIGH                       ; 1                 ; Untyped                                                          ;
+; E0_HIGH                       ; 1                 ; Untyped                                                          ;
+; E1_HIGH                       ; 1                 ; Untyped                                                          ;
+; E2_HIGH                       ; 1                 ; Untyped                                                          ;
+; E3_HIGH                       ; 1                 ; Untyped                                                          ;
+; L0_LOW                        ; 1                 ; Untyped                                                          ;
+; L1_LOW                        ; 1                 ; Untyped                                                          ;
+; G0_LOW                        ; 1                 ; Untyped                                                          ;
+; G1_LOW                        ; 1                 ; Untyped                                                          ;
+; G2_LOW                        ; 1                 ; Untyped                                                          ;
+; G3_LOW                        ; 1                 ; Untyped                                                          ;
+; E0_LOW                        ; 1                 ; Untyped                                                          ;
+; E1_LOW                        ; 1                 ; Untyped                                                          ;
+; E2_LOW                        ; 1                 ; Untyped                                                          ;
+; E3_LOW                        ; 1                 ; Untyped                                                          ;
+; L0_INITIAL                    ; 1                 ; Untyped                                                          ;
+; L1_INITIAL                    ; 1                 ; Untyped                                                          ;
+; G0_INITIAL                    ; 1                 ; Untyped                                                          ;
+; G1_INITIAL                    ; 1                 ; Untyped                                                          ;
+; G2_INITIAL                    ; 1                 ; Untyped                                                          ;
+; G3_INITIAL                    ; 1                 ; Untyped                                                          ;
+; E0_INITIAL                    ; 1                 ; Untyped                                                          ;
+; E1_INITIAL                    ; 1                 ; Untyped                                                          ;
+; E2_INITIAL                    ; 1                 ; Untyped                                                          ;
+; E3_INITIAL                    ; 1                 ; Untyped                                                          ;
+; L0_MODE                       ; BYPASS            ; Untyped                                                          ;
+; L1_MODE                       ; BYPASS            ; Untyped                                                          ;
+; G0_MODE                       ; BYPASS            ; Untyped                                                          ;
+; G1_MODE                       ; BYPASS            ; Untyped                                                          ;
+; G2_MODE                       ; BYPASS            ; Untyped                                                          ;
+; G3_MODE                       ; BYPASS            ; Untyped                                                          ;
+; E0_MODE                       ; BYPASS            ; Untyped                                                          ;
+; E1_MODE                       ; BYPASS            ; Untyped                                                          ;
+; E2_MODE                       ; BYPASS            ; Untyped                                                          ;
+; E3_MODE                       ; BYPASS            ; Untyped                                                          ;
+; L0_PH                         ; 0                 ; Untyped                                                          ;
+; L1_PH                         ; 0                 ; Untyped                                                          ;
+; G0_PH                         ; 0                 ; Untyped                                                          ;
+; G1_PH                         ; 0                 ; Untyped                                                          ;
+; G2_PH                         ; 0                 ; Untyped                                                          ;
+; G3_PH                         ; 0                 ; Untyped                                                          ;
+; E0_PH                         ; 0                 ; Untyped                                                          ;
+; E1_PH                         ; 0                 ; Untyped                                                          ;
+; E2_PH                         ; 0                 ; Untyped                                                          ;
+; E3_PH                         ; 0                 ; Untyped                                                          ;
+; M_PH                          ; 0                 ; Untyped                                                          ;
+; C1_USE_CASC_IN                ; OFF               ; Untyped                                                          ;
+; C2_USE_CASC_IN                ; OFF               ; Untyped                                                          ;
+; C3_USE_CASC_IN                ; OFF               ; Untyped                                                          ;
+; C4_USE_CASC_IN                ; OFF               ; Untyped                                                          ;
+; C5_USE_CASC_IN                ; OFF               ; Untyped                                                          ;
+; C6_USE_CASC_IN                ; OFF               ; Untyped                                                          ;
+; C7_USE_CASC_IN                ; OFF               ; Untyped                                                          ;
+; C8_USE_CASC_IN                ; OFF               ; Untyped                                                          ;
+; C9_USE_CASC_IN                ; OFF               ; Untyped                                                          ;
+; CLK0_COUNTER                  ; G0                ; Untyped                                                          ;
+; CLK1_COUNTER                  ; G0                ; Untyped                                                          ;
+; CLK2_COUNTER                  ; G0                ; Untyped                                                          ;
+; CLK3_COUNTER                  ; G0                ; Untyped                                                          ;
+; CLK4_COUNTER                  ; G0                ; Untyped                                                          ;
+; CLK5_COUNTER                  ; G0                ; Untyped                                                          ;
+; CLK6_COUNTER                  ; E0                ; Untyped                                                          ;
+; CLK7_COUNTER                  ; E1                ; Untyped                                                          ;
+; CLK8_COUNTER                  ; E2                ; Untyped                                                          ;
+; CLK9_COUNTER                  ; E3                ; Untyped                                                          ;
+; L0_TIME_DELAY                 ; 0                 ; Untyped                                                          ;
+; L1_TIME_DELAY                 ; 0                 ; Untyped                                                          ;
+; G0_TIME_DELAY                 ; 0                 ; Untyped                                                          ;
+; G1_TIME_DELAY                 ; 0                 ; Untyped                                                          ;
+; G2_TIME_DELAY                 ; 0                 ; Untyped                                                          ;
+; G3_TIME_DELAY                 ; 0                 ; Untyped                                                          ;
+; E0_TIME_DELAY                 ; 0                 ; Untyped                                                          ;
+; E1_TIME_DELAY                 ; 0                 ; Untyped                                                          ;
+; E2_TIME_DELAY                 ; 0                 ; Untyped                                                          ;
+; E3_TIME_DELAY                 ; 0                 ; Untyped                                                          ;
+; M_TIME_DELAY                  ; 0                 ; Untyped                                                          ;
+; N_TIME_DELAY                  ; 0                 ; Untyped                                                          ;
+; EXTCLK3_COUNTER               ; E3                ; Untyped                                                          ;
+; EXTCLK2_COUNTER               ; E2                ; Untyped                                                          ;
+; EXTCLK1_COUNTER               ; E1                ; Untyped                                                          ;
+; EXTCLK0_COUNTER               ; E0                ; Untyped                                                          ;
+; ENABLE0_COUNTER               ; L0                ; Untyped                                                          ;
+; ENABLE1_COUNTER               ; L0                ; Untyped                                                          ;
+; CHARGE_PUMP_CURRENT           ; 2                 ; Untyped                                                          ;
+; LOOP_FILTER_R                 ;  1.000000         ; Untyped                                                          ;
+; LOOP_FILTER_C                 ; 5                 ; Untyped                                                          ;
+; CHARGE_PUMP_CURRENT_BITS      ; 9999              ; Untyped                                                          ;
+; LOOP_FILTER_R_BITS            ; 9999              ; Untyped                                                          ;
+; LOOP_FILTER_C_BITS            ; 9999              ; Untyped                                                          ;
+; VCO_POST_SCALE                ; 0                 ; Untyped                                                          ;
+; CLK2_OUTPUT_FREQUENCY         ; 0                 ; Untyped                                                          ;
+; CLK1_OUTPUT_FREQUENCY         ; 0                 ; Untyped                                                          ;
+; CLK0_OUTPUT_FREQUENCY         ; 0                 ; Untyped                                                          ;
+; INTENDED_DEVICE_FAMILY        ; Cyclone II        ; Untyped                                                          ;
+; PORT_CLKENA0                  ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_CLKENA1                  ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_CLKENA2                  ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_CLKENA3                  ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_CLKENA4                  ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_CLKENA5                  ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_EXTCLKENA0               ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_EXTCLKENA1               ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_EXTCLKENA2               ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_EXTCLKENA3               ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_EXTCLK0                  ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_EXTCLK1                  ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_EXTCLK2                  ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_EXTCLK3                  ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_CLKBAD0                  ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_CLKBAD1                  ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_CLK0                     ; PORT_USED         ; Untyped                                                          ;
+; PORT_CLK1                     ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_CLK2                     ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_CLK3                     ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_CLK4                     ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_CLK5                     ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_CLK6                     ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_CLK7                     ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_CLK8                     ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_CLK9                     ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_SCANDATA                 ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_SCANDATAOUT              ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_SCANDONE                 ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_SCLKOUT1                 ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_SCLKOUT0                 ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_ACTIVECLOCK              ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_CLKLOSS                  ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_INCLK1                   ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_INCLK0                   ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_FBIN                     ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_PLLENA                   ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_CLKSWITCH                ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_ARESET                   ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_PFDENA                   ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_SCANCLK                  ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_SCANACLR                 ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_SCANREAD                 ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_SCANWRITE                ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_ENABLE0                  ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_ENABLE1                  ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_LOCKED                   ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_CONFIGUPDATE             ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_FBOUT                    ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_PHASEDONE                ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_PHASESTEP                ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_PHASEUPDOWN              ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_SCANCLKENA               ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_PHASECOUNTERSELECT       ; PORT_UNUSED       ; Untyped                                                          ;
+; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; M_TEST_SOURCE                 ; 5                 ; Untyped                                                          ;
+; C0_TEST_SOURCE                ; 5                 ; Untyped                                                          ;
+; C1_TEST_SOURCE                ; 5                 ; Untyped                                                          ;
+; C2_TEST_SOURCE                ; 5                 ; Untyped                                                          ;
+; C3_TEST_SOURCE                ; 5                 ; Untyped                                                          ;
+; C4_TEST_SOURCE                ; 5                 ; Untyped                                                          ;
+; C5_TEST_SOURCE                ; 5                 ; Untyped                                                          ;
+; C6_TEST_SOURCE                ; 5                 ; Untyped                                                          ;
+; C7_TEST_SOURCE                ; 5                 ; Untyped                                                          ;
+; C8_TEST_SOURCE                ; 5                 ; Untyped                                                          ;
+; C9_TEST_SOURCE                ; 5                 ; Untyped                                                          ;
+; CBXI_PARAMETER                ; NOTHING           ; Untyped                                                          ;
+; VCO_FREQUENCY_CONTROL         ; AUTO              ; Untyped                                                          ;
+; VCO_PHASE_SHIFT_STEP          ; 0                 ; Untyped                                                          ;
+; WIDTH_CLOCK                   ; 6                 ; Untyped                                                          ;
+; WIDTH_PHASECOUNTERSELECT      ; 4                 ; Untyped                                                          ;
+; USING_FBMIMICBIDIR_PORT       ; OFF               ; Untyped                                                          ;
+; DEVICE_FAMILY                 ; Cyclone II        ; Untyped                                                          ;
+; SCAN_CHAIN_MIF_FILE           ; UNUSED            ; Untyped                                                          ;
+; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF               ; Untyped                                                          ;
+; AUTO_CARRY_CHAINS             ; ON                ; AUTO_CARRY                                                       ;
+; IGNORE_CARRY_BUFFERS          ; OFF               ; IGNORE_CARRY                                                     ;
+; AUTO_CASCADE_CHAINS           ; ON                ; AUTO_CASCADE                                                     ;
+; IGNORE_CASCADE_BUFFERS        ; OFF               ; IGNORE_CASCADE                                                   ;
++-------------------------------+-------------------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------+
-; Port Connectivity Checks: "router:route|demux_24:demux_a" ;
-+-------+--------+----------+-------------------------------+
-; Port  ; Type   ; Severity ; Details                       ;
-+-------+--------+----------+-------------------------------+
-; out_d ; Output ; Info     ; Explicitly unconnected        ;
-+-------+--------+----------+-------------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller ;
++-------------------------+----------+-----------------------------------------------------------------------------------+
+; Parameter Name          ; Value    ; Type                                                                              ;
++-------------------------+----------+-----------------------------------------------------------------------------------+
+; NUM_RESET_INPUTS        ; 1        ; Signed Integer                                                                    ;
+; OUTPUT_RESET_SYNC_EDGES ; deassert ; String                                                                            ;
+; SYNC_DEPTH              ; 2        ; Signed Integer                                                                    ;
+; RESET_REQUEST_PRESENT   ; 0        ; Signed Integer                                                                    ;
++-------------------------+----------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------+
-; Port Connectivity Checks: "router:route|mux_24:mux_a" ;
-+------+-------+----------+-----------------------------+
-; Port ; Type  ; Severity ; Details                     ;
-+------+-------+----------+-----------------------------+
-; d    ; Input ; Info     ; Explicitly unconnected      ;
-+------+-------+----------+-----------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1 ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------------------------+
+; ASYNC_RESET    ; 1     ; Unsigned Binary                                                                                                                          ;
+; DEPTH          ; 2     ; Signed Integer                                                                                                                           ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dac_adc_test:test0|clk_div_2N:div_8 ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; WIDTH          ; 3     ; Signed Integer                                          ;
+; N              ; 4     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dac_adc_test:test0|clk_div_2N:div_384 ;
++----------------+-----------+-------------------------------------------------------+
+; Parameter Name ; Value     ; Type                                                  ;
++----------------+-----------+-------------------------------------------------------+
+; WIDTH          ; 8         ; Signed Integer                                        ;
+; N              ; 011000000 ; Unsigned Binary                                       ;
++----------------+-----------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; altpll Parameter Settings by Entity Instance                                                            ;
++-------------------------------+-------------------------------------------------------------------------+
+; Name                          ; Value                                                                   ;
++-------------------------------+-------------------------------------------------------------------------+
+; Number of entity instances    ; 1                                                                       ;
+; Entity Instance               ; dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0|altpll:sd1 ;
+;     -- OPERATION_MODE         ; normal                                                                  ;
+;     -- PLL_TYPE               ; AUTO                                                                    ;
+;     -- PRIMARY_CLOCK          ; INCLK0                                                                  ;
+;     -- INCLK0_INPUT_FREQUENCY ; 20000                                                                   ;
+;     -- INCLK1_INPUT_FREQUENCY ; 0                                                                       ;
+;     -- VCO_MULTIPLY_BY        ; 0                                                                       ;
+;     -- VCO_DIVIDE_BY          ; 0                                                                       ;
++-------------------------------+-------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller" ;
++------------+--------+----------+----------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                              ;
++------------+--------+----------+----------------------------------------------------------------------+
+; reset_req  ; Output ; Info     ; Explicitly unconnected                                               ;
+; reset_in1  ; Input  ; Info     ; Stuck at GND                                                         ;
+; reset_in2  ; Input  ; Info     ; Stuck at GND                                                         ;
+; reset_in3  ; Input  ; Info     ; Stuck at GND                                                         ;
+; reset_in4  ; Input  ; Info     ; Stuck at GND                                                         ;
+; reset_in5  ; Input  ; Info     ; Stuck at GND                                                         ;
+; reset_in6  ; Input  ; Info     ; Stuck at GND                                                         ;
+; reset_in7  ; Input  ; Info     ; Stuck at GND                                                         ;
+; reset_in8  ; Input  ; Info     ; Stuck at GND                                                         ;
+; reset_in9  ; Input  ; Info     ; Stuck at GND                                                         ;
+; reset_in10 ; Input  ; Info     ; Stuck at GND                                                         ;
+; reset_in11 ; Input  ; Info     ; Stuck at GND                                                         ;
+; reset_in12 ; Input  ; Info     ; Stuck at GND                                                         ;
+; reset_in13 ; Input  ; Info     ; Stuck at GND                                                         ;
+; reset_in14 ; Input  ; Info     ; Stuck at GND                                                         ;
+; reset_in15 ; Input  ; Info     ; Stuck at GND                                                         ;
++------------+--------+----------+----------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0" ;
++-----------+--------+----------+----------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                  ;
++-----------+--------+----------+----------------------------------------------------------+
+; read      ; Input  ; Info     ; Explicitly unconnected                                   ;
+; write     ; Input  ; Info     ; Explicitly unconnected                                   ;
+; address   ; Input  ; Info     ; Explicitly unconnected                                   ;
+; readdata  ; Output ; Info     ; Explicitly unconnected                                   ;
+; writedata ; Input  ; Info     ; Explicitly unconnected                                   ;
++-----------+--------+----------+----------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dac_adc_test:test0|clk_pll:dac_pll"                 ;
++-----------------------------------+--------+----------+------------------------+
+; Port                              ; Type   ; Severity ; Details                ;
++-----------------------------------+--------+----------+------------------------+
+; reset_reset_n                     ; Input  ; Info     ; Explicitly unconnected ;
+; altpll_0_areset_conduit_export    ; Input  ; Info     ; Stuck at GND           ;
+; altpll_0_locked_conduit_export    ; Output ; Info     ; Explicitly unconnected ;
+; altpll_0_phasedone_conduit_export ; Output ; Info     ; Explicitly unconnected ;
++-----------------------------------+--------+----------+------------------------+
 
 
 +-------------------------------+
@@ -411,7 +918,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -421,11 +928,19 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Fri Mar 18 23:36:13 2016
+    Info: Processing started: Mon Mar 28 11:16:43 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Final_Project -c Final_Project
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file clk_pll/synthesis/clk_pll.v
     Info (12023): Found entity 1: clk_pll
+Info (12021): Found 1 design units, including 1 entities, in source file clk_pll/synthesis/submodules/altera_reset_controller.v
+    Info (12023): Found entity 1: altera_reset_controller
+Info (12021): Found 1 design units, including 1 entities, in source file clk_pll/synthesis/submodules/altera_reset_synchronizer.v
+    Info (12023): Found entity 1: altera_reset_synchronizer
+Info (12021): Found 3 design units, including 3 entities, in source file clk_pll/synthesis/submodules/clk_pll_altpll_0.v
+    Info (12023): Found entity 1: clk_pll_altpll_0_dffpipe_l2c
+    Info (12023): Found entity 2: clk_pll_altpll_0_stdsync_sv6
+    Info (12023): Found entity 3: clk_pll_altpll_0
 Info (12021): Found 1 design units, including 1 entities, in source file serializer.sv
     Info (12023): Found entity 1: serializer
 Info (12021): Found 1 design units, including 1 entities, in source file deserializer.sv
@@ -450,27 +965,119 @@ Info (12021): Found 1 design units, including 1 entities, in source file dsp_rou
     Info (12023): Found entity 1: dsp_route
 Info (12021): Found 1 design units, including 1 entities, in source file testbench.sv
     Info (12023): Found entity 1: testbench
-Info (12127): Elaborating entity "dsp_route" for the top level hierarchy
-Info (12128): Elaborating entity "router" for hierarchy "router:route"
-Info (12128): Elaborating entity "mux_24" for hierarchy "router:route|mux_24:mux_a"
-Info (12128): Elaborating entity "dsp_pedal" for hierarchy "router:route|dsp_pedal:a"
-Info (12128): Elaborating entity "dsp" for hierarchy "router:route|dsp_pedal:a|dsp:DSP"
-Info (12128): Elaborating entity "mux_2" for hierarchy "router:route|dsp_pedal:a|mux_2:dspmux"
-Info (12128): Elaborating entity "demux_24" for hierarchy "router:route|demux_24:demux_a"
-Info (12128): Elaborating entity "router_control" for hierarchy "router_control:control"
+Info (12021): Found 1 design units, including 1 entities, in source file dac_adc_test.sv
+    Info (12023): Found entity 1: dac_adc_test
+Info (12021): Found 1 design units, including 1 entities, in source file dac_adc_test_ctrl.sv
+    Info (12023): Found entity 1: dac_adc_test_ctrl
+Info (12021): Found 1 design units, including 1 entities, in source file test.sv
+    Info (12023): Found entity 1: test
+Info (12021): Found 1 design units, including 1 entities, in source file seg7_lut.sv
+    Info (12023): Found entity 1: SEG7_LUT
+Info (12127): Elaborating entity "test" for the top level hierarchy
+Info (12128): Elaborating entity "dac_adc_test" for hierarchy "dac_adc_test:test0"
+Info (12128): Elaborating entity "clk_pll" for hierarchy "dac_adc_test:test0|clk_pll:dac_pll"
+Info (12128): Elaborating entity "clk_pll_altpll_0" for hierarchy "dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0"
+Info (12128): Elaborating entity "clk_pll_altpll_0_stdsync_sv6" for hierarchy "dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0|clk_pll_altpll_0_stdsync_sv6:stdsync2"
+Info (12128): Elaborating entity "clk_pll_altpll_0_dffpipe_l2c" for hierarchy "dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0|clk_pll_altpll_0_stdsync_sv6:stdsync2|clk_pll_altpll_0_dffpipe_l2c:dffpipe3"
+Info (12128): Elaborating entity "altpll" for hierarchy "dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0|altpll:sd1"
+Info (12130): Elaborated megafunction instantiation "dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0|altpll:sd1"
+Info (12133): Instantiated megafunction "dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0|altpll:sd1" with the following parameter:
+    Info (12134): Parameter "clk0_divide_by" = "15625"
+    Info (12134): Parameter "clk0_duty_cycle" = "50"
+    Info (12134): Parameter "clk0_multiply_by" = "5292"
+    Info (12134): Parameter "clk0_phase_shift" = "0"
+    Info (12134): Parameter "compensate_clock" = "CLK0"
+    Info (12134): Parameter "inclk0_input_frequency" = "20000"
+    Info (12134): Parameter "operation_mode" = "normal"
+    Info (12134): Parameter "port_clk0" = "PORT_USED"
+    Info (12134): Parameter "port_clk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk5" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_inclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasecounterselect" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasedone" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandata" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandataout" = "PORT_UNUSED"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_type" = "altpll"
+Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller"
+Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "dac_adc_test:test0|clk_pll:dac_pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1"
+Info (12128): Elaborating entity "clk_div_2N" for hierarchy "dac_adc_test:test0|clk_div_2N:div_8"
+Warning (10230): Verilog HDL assignment warning at clk_div_N.sv(29): truncated value with size 32 to match size of target (3)
+Info (12128): Elaborating entity "clk_div_2N" for hierarchy "dac_adc_test:test0|clk_div_2N:div_384"
+Warning (10230): Verilog HDL assignment warning at clk_div_N.sv(29): truncated value with size 32 to match size of target (8)
+Info (12128): Elaborating entity "serializer" for hierarchy "dac_adc_test:test0|serializer:to_DAC"
+Warning (10230): Verilog HDL assignment warning at serializer.sv(47): truncated value with size 32 to match size of target (5)
+Info (12128): Elaborating entity "deserializer" for hierarchy "dac_adc_test:test0|deserializer:to_ADC"
+Warning (10230): Verilog HDL assignment warning at deserializer.sv(43): truncated value with size 32 to match size of target (5)
+Info (12128): Elaborating entity "dac_adc_test_ctrl" for hierarchy "dac_adc_test_ctrl:test1"
+Info (12128): Elaborating entity "SEG7_LUT" for hierarchy "SEG7_LUT:u0"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "DAC_data" is stuck at GND
+    Warning (13410): Pin "HEX0[0]" is stuck at GND
+    Warning (13410): Pin "HEX0[1]" is stuck at GND
+    Warning (13410): Pin "HEX0[2]" is stuck at GND
+    Warning (13410): Pin "HEX0[3]" is stuck at GND
+    Warning (13410): Pin "HEX0[4]" is stuck at GND
+    Warning (13410): Pin "HEX0[5]" is stuck at GND
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC
+    Warning (13410): Pin "HEX1[0]" is stuck at GND
+    Warning (13410): Pin "HEX1[1]" is stuck at GND
+    Warning (13410): Pin "HEX1[2]" is stuck at GND
+    Warning (13410): Pin "HEX1[3]" is stuck at GND
+    Warning (13410): Pin "HEX1[4]" is stuck at GND
+    Warning (13410): Pin "HEX1[5]" is stuck at GND
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC
+    Warning (13410): Pin "HEX2[0]" is stuck at GND
+    Warning (13410): Pin "HEX2[1]" is stuck at GND
+    Warning (13410): Pin "HEX2[2]" is stuck at GND
+    Warning (13410): Pin "HEX2[3]" is stuck at GND
+    Warning (13410): Pin "HEX2[4]" is stuck at GND
+    Warning (13410): Pin "HEX2[5]" is stuck at GND
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC
+    Warning (13410): Pin "HEX3[0]" is stuck at GND
+    Warning (13410): Pin "HEX3[1]" is stuck at GND
+    Warning (13410): Pin "HEX3[2]" is stuck at GND
+    Warning (13410): Pin "HEX3[3]" is stuck at GND
+    Warning (13410): Pin "HEX3[4]" is stuck at GND
+    Warning (13410): Pin "HEX3[5]" is stuck at GND
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC
+    Warning (13410): Pin "HEX4[0]" is stuck at GND
+    Warning (13410): Pin "HEX4[1]" is stuck at GND
+    Warning (13410): Pin "HEX4[2]" is stuck at GND
+    Warning (13410): Pin "HEX4[3]" is stuck at GND
+    Warning (13410): Pin "HEX4[4]" is stuck at GND
+    Warning (13410): Pin "HEX4[5]" is stuck at GND
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC
+    Warning (13410): Pin "HEX5[0]" is stuck at GND
+    Warning (13410): Pin "HEX5[1]" is stuck at GND
+    Warning (13410): Pin "HEX5[2]" is stuck at GND
+    Warning (13410): Pin "HEX5[3]" is stuck at GND
+    Warning (13410): Pin "HEX5[4]" is stuck at GND
+    Warning (13410): Pin "HEX5[5]" is stuck at GND
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC
+Info (17049): 32 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/Justin/Documents/GitHub/ECE445/output_files/Final_Project.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk"
-Info (21057): Implemented 676 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 106 input pins
-    Info (21059): Implemented 96 output pins
-    Info (21061): Implemented 474 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 498 megabytes
-    Info: Processing ended: Fri Mar 18 23:36:18 2016
-    Info: Elapsed time: 00:00:05
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ADC_data"
+    Warning (15610): No output dependent on input pin "LRSEL"
+Info (21057): Implemented 77 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 46 output pins
+    Info (21061): Implemented 25 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 51 warnings
+    Info: Peak virtual memory: 505 megabytes
+    Info: Processing ended: Mon Mar 28 11:16:45 2016
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

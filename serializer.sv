@@ -4,8 +4,8 @@ module serializer
 	input [23:0] left,
 	input [23:0] right,
 	input begin_transmit,
-	output LRCK,
-	output BCK,
+	input LRCK,
+	input BCK,
 	output out
 );
 /*
@@ -17,19 +17,6 @@ f_s = 44.1 kHz
 
 Binary 2's complement MSB-first audio data
 */
-clk_div_2N div_8 //Divide SCK by 8 to get BCK, set defaults to 8
-(
-.clk(SCK),
-.reset(begin_transmit),
-.clk_out(BCK)
-);
-
-clk_div_2N #(.WIDTH(8), .N(9'd192))div_384 //Since you do a division by 2N, 192 * 2 = 384
-(
-.clk(SCK),
-.reset(begin_transmit),
-.clk_out(LRCK)
-);
 
 logic [4:0] count; // count from 00000 to 10111 (24)
 logic old_lrck, lr_rise, lr_fall;
@@ -38,11 +25,12 @@ assign lr_fall = (old_lrck & !LRCK);
 
 always @ (posedge BCK or posedge begin_transmit)
 begin
+	old_lrck = LRCK;
 	if (begin_transmit)
 	begin
-	count <= 5'b10111;
+	count <= 5'd23;
 	end
-	if (lr_rise) //left channel
+	else if (lr_rise) //left channel
 	begin
 		out <= left[count];
 	end
@@ -51,12 +39,12 @@ begin
 		out = right[count];
 	end
 	
-	if (count == 5'h00) //last one
+	else if (count == 5'h00) //last one
 	begin
-	count <= 5'b10111;
+	count <= 5'd23;
 	end
 	else
-	count = count - 1;
+	count <= count - 5'd1;
 end
 
 

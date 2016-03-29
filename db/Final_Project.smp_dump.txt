@@ -1,0 +1,6 @@
+
+State Machine - |test|dac_adc_test_ctrl:test1|state
+Name state.s_idle state.s_begin state.s_idle2 
+state.s_idle 0 0 0 
+state.s_idle2 1 0 1 
+state.s_begin 1 1 0 

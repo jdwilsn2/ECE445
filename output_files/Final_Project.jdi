@@ -1,8 +1,16 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="4548a288c6a44c9b6314"/>
+    <hash md5_digest_80b="0bdc4a446d491105f9e3"/>
   </project>
   <file_info>
     <file device="EP2C35F672C6" path="Final_Project.sof" usercode="0xFFFFFFFF"/>
   </file_info>
+  <sld_infos>
+    <sld_info hpath="dac_adc_test:test0|clk_pll:dac_pll" name="dac_pll">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME clk_pll HAS_SOPCINFO 1 GENERATION_ID 1458358746"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+  </sld_infos>
 </sld_project_info>

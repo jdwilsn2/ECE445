@@ -2,4 +2,68 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : 18.284
+TNS   : 0.000
+
+Type  : Slow Model Setup 'test0|dac_pll|altpll_0|sd1|pll|clk[0]'
+Slack : 54.736
+TNS   : 0.000
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Hold 'test0|dac_pll|altpll_0|sd1|pll|clk[0]'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'test0|dac_pll|altpll_0|sd1|pll|clk[0]'
+Slack : -2.710
+TNS   : -29.810
+
+Type  : Slow Model Removal 'test0|dac_pll|altpll_0|sd1|pll|clk[0]'
+Slack : 3.433
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.000
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'test0|dac_pll|altpll_0|sd1|pll|clk[0]'
+Slack : 28.523
+TNS   : 0.000
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : 19.184
+TNS   : 0.000
+
+Type  : Fast Model Setup 'test0|dac_pll|altpll_0|sd1|pll|clk[0]'
+Slack : 57.100
+TNS   : 0.000
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'test0|dac_pll|altpll_0|sd1|pll|clk[0]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'test0|dac_pll|altpll_0|sd1|pll|clk[0]'
+Slack : -1.371
+TNS   : -15.081
+
+Type  : Fast Model Removal 'test0|dac_pll|altpll_0|sd1|pll|clk[0]'
+Slack : 2.204
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.000
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'test0|dac_pll|altpll_0|sd1|pll|clk[0]'
+Slack : 28.523
+TNS   : 0.000
+
 ------------------------------------------------------------
