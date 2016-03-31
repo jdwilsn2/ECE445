@@ -1,32 +1,42 @@
 module test
 (
 	input CLOCK_50,
-	output logic DAC_data, //GPIO0
-	input ADC_data, //GPIO2
-	input reset_n, //key 0
-	input start_n, //key 1
-	input LRSEL, //sw0
-	output logic LEDR0, LEDR1, LEDR2,
+	input [1:0] KEY, //key 0, 1
+	input [17:0] SW, //LRSEL, //sw0
+	output logic [17:0] LEDR,
 	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5,
-	output logic SCK, //GPIO 4
-	output logic LRCK, //GPIO 6
-	output logic BCK //GPIO 8
+	inout wire [35:0] GPIO,
+	output logic SMA_CLKOUT
+	//output logic DAC_data, //GPIO0
+	//input ADC_data, //GPIO2
+	//output logic SCK, //GPIO 4
+	//output logic LRCK, //GPIO 6
+	//output logic BCK //GPIO 8
 );
+	logic LRSEL;
+	logic SCK, LRCK, BCK;
 	logic [23:0] deserializedL;
 	logic [23:0] deserializedR;
 	logic [23:0] to_7seg;
 	logic reset, start;
 	logic check;
-	assign reset = ~reset_n;
-	assign start = ~start_n;
-	assign LEDR0 = reset;
-	assign LEDR1 = start;
-	assign LEDR2 = check;
+	logic ADC_data, DAC_data;
+	assign SMA_CLKOUT = SCK;
+	assign GPIO[0] = DAC_data;
+	assign GPIO[2] = ADC_data;
+	assign GPIO[4] = LRCK;
+	assign GPIO[16] = BCK;
+	assign LRSEL = SW[0];
+	assign reset = ~KEY[0];
+	assign start = ~KEY[1];
+	assign LEDR[0] = reset;
+	assign LEDR[1] = start;
+	assign LEDR[2] = check;
 logic begin_transmit, begin_receive;
 dac_adc_test test0(.*);
 dac_adc_test_ctrl test1(.*);
 
-	assign to_7seg = (LRSEL) ? deserializedL : deserializedR;
+assign to_7seg = (LRSEL) ? deserializedL : deserializedR;
 
 //test
 SEG7_LUT u0 (.iDIG(to_7seg[3:0]),.oSEG(HEX0));

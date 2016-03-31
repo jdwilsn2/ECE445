@@ -1,9 +1,9 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="4ad35c7070a4caaec74b"/>
+    <hash md5_digest_80b="ac8ec4926fcb32788904"/>
   </project>
   <file_info>
-    <file device="EP2C35F672C6" path="Final_Project.sof" usercode="0xFFFFFFFF"/>
+    <file device="EP4CE115F29C7" path="Final_Project.sof" usercode="0xFFFFFFFF"/>
   </file_info>
   <sld_infos>
     <sld_info hpath="dac_adc_test:test0|clk_pll:dac_pll" name="dac_pll">
