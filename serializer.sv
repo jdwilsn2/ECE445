@@ -23,7 +23,7 @@ logic old_lrck, lr_rise, lr_fall;
 assign lr_rise = (LRCK & !old_lrck);
 assign lr_fall = (old_lrck & !LRCK);
 
-always @ (posedge BCK or posedge begin_transmit)
+always @ (negedge BCK or posedge begin_transmit)
 begin
 	old_lrck = LRCK;
 	if (begin_transmit)
