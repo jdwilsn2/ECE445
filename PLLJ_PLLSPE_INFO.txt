@@ -1,0 +1,5 @@
+PLL_Name	dac_adc_test:test0|clk_pll:dac_pll|clk_pll_altpll_0:altpll_0|altpll:sd1|pll
+PLLJITTER	36
+PLLSPEmax	84
+PLLSPEmin	-53
+
