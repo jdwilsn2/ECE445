@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Final_Project
-Mon Mar 28 11:16:59 2016
+Wed Mar 30 18:33:21 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Mar 28 11:16:59 2016 ;
+; EDA Netlist Writer Status ; Successful - Wed Mar 30 18:33:21 2016 ;
 ; Revision Name             ; Final_Project                         ;
 ; Top-level Entity Name     ; test                                  ;
 ; Family                    ; Cyclone II                            ;
@@ -84,12 +84,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Mon Mar 28 11:16:58 2016
+    Info: Processing started: Wed Mar 30 18:33:20 2016
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Final_Project -c Final_Project
 Info (204026): Generated files "Final_Project.svo", "Final_Project_fast.svo", "Final_Project_v.sdo" and "Final_Project_v_fast.sdo" in directory "C:/Users/Justin/Documents/GitHub/ECE445/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 414 megabytes
-    Info: Processing ended: Mon Mar 28 11:16:59 2016
+    Info: Processing ended: Wed Mar 30 18:33:21 2016
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

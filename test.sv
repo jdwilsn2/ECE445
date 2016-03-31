@@ -6,6 +6,7 @@ module test
 	input reset_n, //key 0
 	input start_n, //key 1
 	input LRSEL, //sw0
+	output logic LEDR0, LEDR1, LEDR2,
 	output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5,
 	output logic SCK, //GPIO 4
 	output logic LRCK, //GPIO 6
@@ -14,13 +15,18 @@ module test
 	logic [23:0] deserializedL;
 	logic [23:0] deserializedR;
 	logic [23:0] to_7seg;
-	assign to_7seg = (LRSEL) ? deserializedL : deserializedR;
 	logic reset, start;
+	logic check;
 	assign reset = ~reset_n;
 	assign start = ~start_n;
+	assign LEDR0 = reset;
+	assign LEDR1 = start;
+	assign LEDR2 = check;
 logic begin_transmit, begin_receive;
 dac_adc_test test0(.*);
 dac_adc_test_ctrl test1(.*);
+
+	assign to_7seg = (LRSEL) ? deserializedL : deserializedR;
 
 //test
 SEG7_LUT u0 (.iDIG(to_7seg[3:0]),.oSEG(HEX0));

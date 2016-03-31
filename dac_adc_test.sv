@@ -5,26 +5,42 @@ module dac_adc_test
 //	input [23:0] serializemeR,
 	output [23:0] deserializedL,
 	output [23:0] deserializedR,
+	input reset,
 	input begin_transmit,
 	input begin_receive,
 	input ADC_data, 	//From ADC
 	output DAC_data,	//To DAC
 	output SCK,	//DAC SCK
 	output LRCK,	//DAC LRCK
-	output BCK		//DAC BCK
+	output BCK,		//DAC BCK
+	output check
 );
-	logic clk;
+	logic clk, SCK0;
 	assign clk = CLOCK_50;
-
+	always_ff @ (posedge clk)
+	begin
+		if (reset)
+			begin
+			check = 1'b0;
+			end
+		else if ((begin_transmit == 1'b1) || (begin_receive == 1))
+			begin
+			check = 1'b1;
+			end
+	end
+	
 	clk_pll dac_pll
 	(
 	.reset_reset_n(),
 	.clk_clk(clk),
-	.clk_o_clk(SCK),
+	.clk_o_clk(SCK0),
 	.altpll_0_areset_conduit_export(1'b0),
 	.altpll_0_locked_conduit_export(),
 	.altpll_0_phasedone_conduit_export()
 	);
+	assign SCK = (check) ? SCK0 : 1'b0;//(SCK0 & check);
+
+	
 	/*
 BCK = 48*f_s = SCK / 8
 LRCK = f_s
@@ -88,5 +104,5 @@ clk_div_2N  #(.WIDTH(8), .N(9'd192)) div_384 //Since you do a division by 2N, 19
 	.left(deserializedL),
 	.right(deserializedR)
 	);
-	
+
 endmodule : dac_adc_test
