@@ -610,4 +610,5 @@ set_global_assignment -name PARTITION_COLOR 16764057 -entity Final_Project -sect
 set_global_assignment -name LL_ROOT_REGION ON -entity Final_Project -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Final_Project -section_id "Root Region"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity Final_Project -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE output_files/register.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
