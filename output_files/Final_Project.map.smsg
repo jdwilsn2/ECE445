@@ -1,3 +1,2 @@
 Warning (10268): Verilog HDL information at serializer.sv(26): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at deserializer.sv(19): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at dac_adc_test_ctrl.sv(41): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at dac_adc_test_ctrl.sv(44): always construct contains both blocking and non-blocking assignments

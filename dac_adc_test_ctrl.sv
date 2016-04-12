@@ -3,8 +3,8 @@ module dac_adc_test_ctrl
 	input CLOCK_50,
 	input reset,
 	input start,
-	output begin_transmit,
-	output begin_receive
+	output logic begin_transmit,
+	output logic begin_receive
 );
 enum int unsigned 
 {
@@ -32,6 +32,9 @@ next_state = state;
 	end
 	s_begin: begin
 		next_state = s_idle;
+	if (reset == 1) begin
+		next_state = s_idle;
+	end
 	end
 	endcase
 end

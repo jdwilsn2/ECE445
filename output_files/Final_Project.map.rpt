@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Final_Project
-Wed Apr 06 11:20:06 2016
+Mon Apr 11 20:15:05 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -51,7 +51,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr 06 11:20:05 2016            ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 11 20:15:05 2016            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; Final_Project                                    ;
 ; Top-level Entity Name              ; test                                             ;
@@ -244,158 +244,100 @@ Encoding Type:  One-Hot
 +---------------+--------------+---------------+---------------+
 
 
++--------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                 ;
++------------------------------------------------------+-------------------------------------------------------------+
+; Register name                                        ; Reason for Removal                                          ;
++------------------------------------------------------+-------------------------------------------------------------+
+; register:reg_r|data[0..23]                           ; Stuck at GND due to stuck port clock                        ;
+; register:reg_l|data[0..23]                           ; Stuck at GND due to stuck port clock                        ;
+; dac_adc_test:test0|deserializer:to_ADC|right[13]     ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[5]       ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[5,9]    ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[1,13]    ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[1,15]   ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[7]       ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[11]     ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[15]      ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[7]      ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[3]       ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[3]      ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[19]      ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[0]      ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[12]      ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[22,23]  ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[11,18]   ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[16,21]  ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[8]       ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[14]     ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[16]      ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[12]     ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[6]       ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[10]     ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[20]      ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[8]      ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[4]       ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[6]      ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[14]      ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[4]      ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[2]       ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[2]      ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[0,22]    ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[20]     ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[10]      ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[18,19]  ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|left[9,17,21] ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|deserializer:to_ADC|right[17]     ; Merged with dac_adc_test:test0|deserializer:to_ADC|left[23] ;
+; dac_adc_test:test0|serializer:to_DAC|count[1,2,4]    ; Merged with dac_adc_test:test0|serializer:to_DAC|count[0]   ;
+; dac_adc_test:test0|deserializer:to_ADC|left[23]      ; Stuck at GND due to stuck port data_in                      ;
+; dac_adc_test:test0|serializer:to_DAC|count[0]        ; Stuck at VCC due to stuck port data_in                      ;
+; dac_adc_test:test0|serializer:to_DAC|count[3]        ; Stuck at GND due to stuck port data_in                      ;
+; dac_adc_test:test0|serializer:to_DAC|out             ; Stuck at GND due to stuck port data_in                      ;
+; dac_adc_test_ctrl:test1|state~4                      ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~5                      ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~6                      ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~7                      ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~8                      ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~9                      ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~10                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~11                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~12                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~13                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~14                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~15                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~16                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~17                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~18                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~19                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~20                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~21                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~22                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~23                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~24                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~25                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~26                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~27                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~28                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~29                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~30                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~31                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~32                     ; Lost fanout                                                 ;
+; dac_adc_test_ctrl:test1|state~33                     ; Lost fanout                                                 ;
+; dac_adc_test:test0|clk_div_2N:div_384|count[0]       ; Merged with dac_adc_test:test0|clk_div_2N:div_8|count[0]    ;
+; dac_adc_test:test0|clk_div_2N:div_384|count[1]       ; Merged with dac_adc_test:test0|clk_div_2N:div_8|count[1]    ;
+; dac_adc_test:test0|clk_div_2N:div_8|count[2]         ; Stuck at GND due to stuck port data_in                      ;
+; Total Number of Removed Registers = 135              ;                                                             ;
++------------------------------------------------------+-------------------------------------------------------------+
+
+
 +------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                     ;
-+-------------------------------------------------------------+----------------------------------------------------------+
-; Register name                                               ; Reason for Removal                                       ;
-+-------------------------------------------------------------+----------------------------------------------------------+
-; register:reg_r|data[0..23]                                  ; Stuck at GND due to stuck port clock                     ;
-; register:reg_l|data[0..23]                                  ; Stuck at GND due to stuck port clock                     ;
-; dac_adc_test:test0|deserializer:to_ADC|count[0..4]          ; Lost fanout                                              ;
-; dac_adc_test:test0|deserializer:to_ADC|running_left[0..23]  ; Lost fanout                                              ;
-; dac_adc_test:test0|deserializer:to_ADC|running_right[0..23] ; Lost fanout                                              ;
-; dac_adc_test:test0|deserializer:to_ADC|left[0..23]          ; Lost fanout                                              ;
-; dac_adc_test:test0|deserializer:to_ADC|right[0..23]         ; Lost fanout                                              ;
-; dac_adc_test:test0|serializer:to_DAC|out                    ; Stuck at GND due to stuck port data_in                   ;
-; dac_adc_test_ctrl:test1|state~4                             ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~5                             ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~6                             ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~7                             ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~8                             ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~9                             ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~10                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~11                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~12                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~13                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~14                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~15                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~16                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~17                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~18                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~19                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~20                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~21                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~22                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~23                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~24                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~25                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~26                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~27                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~28                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~29                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~30                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~31                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~32                            ; Lost fanout                                              ;
-; dac_adc_test_ctrl:test1|state~33                            ; Lost fanout                                              ;
-; dac_adc_test:test0|clk_div_2N:div_384|count[0]              ; Merged with dac_adc_test:test0|clk_div_2N:div_8|count[0] ;
-; dac_adc_test:test0|clk_div_2N:div_384|count[1]              ; Merged with dac_adc_test:test0|clk_div_2N:div_8|count[1] ;
-; dac_adc_test:test0|clk_div_2N:div_8|count[2]                ; Stuck at GND due to stuck port data_in                   ;
-; Total Number of Removed Registers = 183                     ;                                                          ;
-+-------------------------------------------------------------+----------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                          ;
-+-------------------------+-------------------------+--------------------------------------------------+
-; Register name           ; Reason for Removal      ; Registers Removed due to This Register           ;
-+-------------------------+-------------------------+--------------------------------------------------+
-; register:reg_r|data[6]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[6]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[5]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[5]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[4]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[4]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[3]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[3]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[2]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[2]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[1]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[1]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[0]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[0]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[7]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[7]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[8]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[8]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[9]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[9]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[10] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[10] ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[11] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[11] ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[12] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[12] ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[13] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[13] ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[14] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[14] ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[15] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[15] ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[16] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[16] ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[17] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[17] ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[18] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[18] ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[19] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[19] ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[20] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[20] ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[21] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[21] ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[22] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[22] ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_r|data[23] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|right[23] ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[6]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[6]   ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[5]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[5]   ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[4]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[4]   ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[3]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[3]   ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[2]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[2]   ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[1]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[1]   ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[0]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[0]   ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[7]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[7]   ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[8]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[8]   ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[9]  ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[9]   ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[10] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[10]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[11] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[11]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[12] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[12]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[13] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[13]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[14] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[14]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[15] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[15]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[16] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[16]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[17] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[17]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[18] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[18]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[19] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[19]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[20] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[20]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[21] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[21]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[22] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[22]  ;
-;                         ; due to stuck port clock ;                                                  ;
-; register:reg_l|data[23] ; Stuck at GND            ; dac_adc_test:test0|deserializer:to_ADC|left[23]  ;
-;                         ; due to stuck port clock ;                                                  ;
-+-------------------------+-------------------------+--------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                            ;
++-------------------------------------------------+---------------------------+------------------------------------------+
+; Register name                                   ; Reason for Removal        ; Registers Removed due to This Register   ;
++-------------------------------------------------+---------------------------+------------------------------------------+
+; dac_adc_test:test0|deserializer:to_ADC|left[23] ; Stuck at GND              ; dac_adc_test:test0|serializer:to_DAC|out ;
+;                                                 ; due to stuck port data_in ;                                          ;
++-------------------------------------------------+---------------------------+------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -488,7 +430,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed Apr 06 11:20:02 2016
+    Info: Processing started: Mon Apr 11 20:15:03 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Final_Project -c Final_Project
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file clk_pll/synthesis/clk_pll.v
@@ -535,10 +477,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file seg7_lu
     Info (12023): Found entity 1: SEG7_LUT
 Info (12021): Found 1 design units, including 1 entities, in source file output_files/register.sv
     Info (12023): Found entity 1: register
+Info (12021): Found 1 design units, including 1 entities, in source file lcd_driver.sv
+    Info (12023): Found entity 1: LCD_driver
 Warning (10236): Verilog HDL Implicit Net warning at test.sv(43): created implicit net for "clk"
 Info (12127): Elaborating entity "test" for the top level hierarchy
 Warning (10030): Net "ADC_data" at test.sv(24) has no driver or initial value, using a default initial value '0'
 Warning (10034): Output port "LEDR[17..3]" at test.sv(6) has no driver
+Warning (10034): Output port "SMA_CLKOUT" at test.sv(9) has no driver
 Info (12128): Elaborating entity "dac_adc_test" for hierarchy "dac_adc_test:test0"
 Info (12128): Elaborating entity "clk_div_2N" for hierarchy "dac_adc_test:test0|clk_div_2N:div_8"
 Warning (10230): Verilog HDL assignment warning at clk_div_N.sv(29): truncated value with size 32 to match size of target (3)
@@ -556,10 +501,12 @@ Warning (12011): Net is missing source, defaulting to GND
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "clk" is missing source, defaulting to GND
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[4]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[1]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[21]" and its non-tri-state driver.
 Warning (13039): The following bidir pins have no drivers
-    Warning (13040): Bidir "GPIO[1]" has no driver
-    Warning (13040): Bidir "GPIO[3]" has no driver
+    Warning (13040): Bidir "GPIO[0]" has no driver
+    Warning (13040): Bidir "GPIO[2]" has no driver
+    Warning (13040): Bidir "GPIO[4]" has no driver
     Warning (13040): Bidir "GPIO[5]" has no driver
     Warning (13040): Bidir "GPIO[6]" has no driver
     Warning (13040): Bidir "GPIO[7]" has no driver
@@ -576,7 +523,6 @@ Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO[18]" has no driver
     Warning (13040): Bidir "GPIO[19]" has no driver
     Warning (13040): Bidir "GPIO[20]" has no driver
-    Warning (13040): Bidir "GPIO[21]" has no driver
     Warning (13040): Bidir "GPIO[22]" has no driver
     Warning (13040): Bidir "GPIO[23]" has no driver
     Warning (13040): Bidir "GPIO[24]" has no driver
@@ -590,12 +536,12 @@ Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO[32]" has no driver
     Warning (13040): Bidir "GPIO[33]" has no driver
     Warning (13040): Bidir "GPIO[34]" has no driver
-    Warning (13040): Bidir "GPIO[35]" has no driver
 Warning (13032): The following tri-state nodes are fed by constants
-    Warning (13033): The pin "GPIO[0]" is fed by GND
-    Warning (13033): The pin "GPIO[2]" is fed by GND
+    Warning (13033): The pin "GPIO[3]" is fed by GND
+    Warning (13033): The pin "GPIO[35]" is fed by GND
 Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "GPIO[4]~synth"
+    Warning (13010): Node "GPIO[1]~synth"
+    Warning (13010): Node "GPIO[21]~synth"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[3]" is stuck at GND
     Warning (13410): Pin "LEDR[4]" is stuck at GND
@@ -654,8 +600,9 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX5[4]" is stuck at GND
     Warning (13410): Pin "HEX5[5]" is stuck at GND
     Warning (13410): Pin "HEX5[6]" is stuck at VCC
+    Warning (13410): Pin "SMA_CLKOUT" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 131 registers lost all their fanouts during netlist optimizations.
+Info (17049): 30 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored assignments for entity "Final_Project" -- entity does not exist in design
     Warning (20014): Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity Final_Project -section_id "Root Region" was ignored
     Warning (20014): Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Final_Project -section_id "Root Region" was ignored
@@ -723,10 +670,10 @@ Info (21057): Implemented 147 device resources after synthesis - the final resou
     Info (21059): Implemented 61 output pins
     Info (21060): Implemented 36 bidirectional pins
     Info (21061): Implemented 26 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 169 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 172 warnings
     Info: Peak virtual memory: 478 megabytes
-    Info: Processing ended: Wed Apr 06 11:20:06 2016
-    Info: Elapsed time: 00:00:04
+    Info: Processing ended: Mon Apr 11 20:15:05 2016
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

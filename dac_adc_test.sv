@@ -3,17 +3,17 @@ module dac_adc_test
 	input CLOCK_50,	//50 MHz clock
 //	input [23:0] serializemeL,
 //	input [23:0] serializemeR,
-	output [23:0] deserializedL,
-	output [23:0] deserializedR,
+	output logic [23:0] deserializedL,
+	output logic [23:0] deserializedR,
 	input reset,
 	input begin_transmit,
 	input begin_receive,
 	input ADC_data, 	//From ADC
-	output DAC_data,	//To DAC
+	output logic DAC_data,	//To DAC
 	input SCK,	//DAC SCK
-	output LRCK,	//DAC LRCK
-	output BCK,		//DAC BCK
-	output check
+	output logic LRCK,	//DAC LRCK
+	output logic BCK,		//DAC BCK
+	output logic check
 );
 	logic clk, SCK0;
 	assign clk = CLOCK_50;

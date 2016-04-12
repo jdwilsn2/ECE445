@@ -6,7 +6,7 @@ module serializer
 	input begin_transmit,
 	input LRCK,
 	input BCK,
-	output out
+	output logic out
 );
 /*
 BCK = 48*f_s = SCK / 8
@@ -19,22 +19,22 @@ Binary 2's complement MSB-first audio data
 */
 
 logic [4:0] count; // count from 00000 to 10111 (24)
-logic old_lrck, lr_rise, lr_fall;
-assign lr_rise = (LRCK & !old_lrck);
-assign lr_fall = (old_lrck & !LRCK);
+//logic old_lrck, lr_rise, lr_fall;
+//assign lr_rise = (LRCK & !old_lrck);
+//assign lr_fall = (old_lrck & !LRCK);
 
-always @ (negedge BCK or posedge begin_transmit)
+always @ (posedge BCK or posedge begin_transmit)
 begin
-	old_lrck = LRCK;
+	//old_lrck = LRCK;
 	if (begin_transmit)
 	begin
 	count <= 5'd23;
 	end
-	else if (lr_rise) //left channel
+	else if (LRCK) //left channel
 	begin
 		out <= left[count];
 	end
-	else if (lr_fall) //right channel
+	else if (!LRCK) //right channel
 	begin
 		out = right[count];
 	end

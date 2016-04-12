@@ -1,0 +1,240 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Final_Project_run_msim_rtl_systemverilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/serializer.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module serializer
+# ** Error: C:/Users/Justin/Documents/GitHub/ECE445/serializer.sv(35): (vlog-2110) Illegal reference to net "out".
+# 
+# ** Error: C:/Users/Justin/Documents/GitHub/ECE445/serializer.sv(39): (vlog-2110) Illegal reference to net "out".
+# 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Final_Project_run_msim_rtl_systemverilog.do line 8
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/serializer.sv}"
+do Final_Project_run_msim_rtl_systemverilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/serializer.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module serializer
+# ** Error: C:/Users/Justin/Documents/GitHub/ECE445/serializer.sv(46): (vlog-2110) Illegal reference to net "out".
+# 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Final_Project_run_msim_rtl_systemverilog.do line 8
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/serializer.sv}"
+do Final_Project_run_msim_rtl_systemverilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/serializer.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module serializer
+# 
+# Top level modules:
+# 	serializer
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/deserializer.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module deserializer
+# ** Error: C:/Users/Justin/Documents/GitHub/ECE445/deserializer.sv(39): (vlog-2110) Illegal reference to net "left".
+# 
+# ** Error: C:/Users/Justin/Documents/GitHub/ECE445/deserializer.sv(40): (vlog-2110) Illegal reference to net "right".
+# 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Final_Project_run_msim_rtl_systemverilog.do line 9
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/deserializer.sv}"
+do Final_Project_run_msim_rtl_systemverilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/serializer.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module serializer
+# 
+# Top level modules:
+# 	serializer
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/deserializer.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module deserializer
+# 
+# Top level modules:
+# 	deserializer
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/clk_div_N.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clk_div_2N
+# 
+# Top level modules:
+# 	clk_div_2N
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/dac_adc_test.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module dac_adc_test
+# ** Error: C:/Users/Justin/Documents/GitHub/ECE445/dac_adc_test.sv(24): (vlog-2110) Illegal reference to net "check".
+# 
+# ** Error: C:/Users/Justin/Documents/GitHub/ECE445/dac_adc_test.sv(28): (vlog-2110) Illegal reference to net "check".
+# 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Final_Project_run_msim_rtl_systemverilog.do line 11
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/dac_adc_test.sv}"
+do Final_Project_run_msim_rtl_systemverilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/serializer.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module serializer
+# 
+# Top level modules:
+# 	serializer
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/deserializer.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module deserializer
+# 
+# Top level modules:
+# 	deserializer
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/clk_div_N.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clk_div_2N
+# 
+# Top level modules:
+# 	clk_div_2N
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/dac_adc_test.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module dac_adc_test
+# 
+# Top level modules:
+# 	dac_adc_test
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/dac_adc_test_ctrl.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module dac_adc_test_ctrl
+# ** Error: C:/Users/Justin/Documents/GitHub/ECE445/dac_adc_test_ctrl.sv(41): (vlog-2110) Illegal reference to net "begin_transmit".
+# 
+# ** Error: C:/Users/Justin/Documents/GitHub/ECE445/dac_adc_test_ctrl.sv(42): (vlog-2110) Illegal reference to net "begin_receive".
+# 
+# ** Error: C:/Users/Justin/Documents/GitHub/ECE445/dac_adc_test_ctrl.sv(47): (vlog-2110) Illegal reference to net "begin_transmit".
+# 
+# ** Error: C:/Users/Justin/Documents/GitHub/ECE445/dac_adc_test_ctrl.sv(48): (vlog-2110) Illegal reference to net "begin_receive".
+# 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Final_Project_run_msim_rtl_systemverilog.do line 12
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/dac_adc_test_ctrl.sv}"
+do Final_Project_run_msim_rtl_systemverilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/serializer.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module serializer
+# 
+# Top level modules:
+# 	serializer
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/deserializer.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module deserializer
+# 
+# Top level modules:
+# 	deserializer
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/clk_div_N.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clk_div_2N
+# 
+# Top level modules:
+# 	clk_div_2N
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/dac_adc_test.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module dac_adc_test
+# 
+# Top level modules:
+# 	dac_adc_test
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/dac_adc_test_ctrl.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module dac_adc_test_ctrl
+# 
+# Top level modules:
+# 	dac_adc_test_ctrl
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/SEG7_LUT.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SEG7_LUT
+# 
+# Top level modules:
+# 	SEG7_LUT
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445/output_files {C:/Users/Justin/Documents/GitHub/ECE445/output_files/register.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/test.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module test
+# 
+# Top level modules:
+# 	test
+# 
+# vlog -sv -work work +incdir+C:/Users/Justin/Documents/GitHub/ECE445 {C:/Users/Justin/Documents/GitHub/ECE445/testbench.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  testbench
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps testbench 
+# Loading sv_std.std
+# Loading work.testbench
+# ** Error: (vsim-3033) C:/Users/Justin/Documents/GitHub/ECE445/testbench.sv(11): Instantiation of 'dsp_route' failed. The design unit was not found.
+# 
+#         Region: /testbench
+#         Searched libraries:
+#             C:/altera/13.0sp1/modelsim_ase/altera/verilog/altera
+#             C:/altera/13.0sp1/modelsim_ase/altera/verilog/220model
+#             C:/altera/13.0sp1/modelsim_ase/altera/verilog/sgate
+#             C:/altera/13.0sp1/modelsim_ase/altera/verilog/altera_mf
+#             C:/altera/13.0sp1/modelsim_ase/altera/verilog/altera_lnsim
+#             C:/altera/13.0sp1/modelsim_ase/altera/verilog/cycloneive
+#             C:/Users/Justin/Documents/GitHub/ECE445/simulation/modelsim/rtl_work
+#             C:/Users/Justin/Documents/GitHub/ECE445/simulation/modelsim/rtl_work
+#             C:/Users/Justin/Documents/GitHub/ECE445/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./Final_Project_run_msim_rtl_systemverilog.do PAUSED at line 19
+# A time value could not be extracted from the current line
