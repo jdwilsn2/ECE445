@@ -9,13 +9,14 @@
  </systemtable>
  <clocktable>
   <columns>
-   <clockname preferredWidth="346" />
-   <clocksource preferredWidth="346" />
-   <frequency preferredWidth="328" />
+   <clockname preferredWidth="363" />
+   <clocksource preferredWidth="361" />
+   <frequency preferredWidth="346" />
   </columns>
  </clocktable>
  <window width="1382" height="744" x="-8" y="-8" />
  <library
-   expandedCategories="Library/Peripherals,Library,Library/Interface Protocols/Serial,Project,Library/Interface Protocols" />
+   expandedCategories="Library,Project,Library/Peripherals,Library/Peripherals/Debug and Performance" />
  <hdlexample language="VERILOG" />
+ <generation simulation="VERILOG" testbench_system="STANDARD" />
 </preferences>

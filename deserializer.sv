@@ -2,7 +2,7 @@ module deserializer
 (
 	input SCK,
 	input in,
-	input begin_receive,
+	input reset,
 	input LRCK,
 	input BCK,
 	output logic [23:0] left,
@@ -16,31 +16,31 @@ logic [4:0] count;
 //assign lr_rise = (LRCK & !old_lrck);
 //assign lr_fall = (old_lrck & !LRCK);
 
-always @(posedge BCK or posedge begin_receive)
+always @(posedge BCK or posedge reset)
 begin
 	//old_lrck = LRCK;
-	if(begin_receive)
+	if(reset)
 	begin
-		count <= 5'd23;
+		count = 5'd23;
 	end
 	
 	else if (LRCK)
 	begin
 		running_left[count] <= in; //left channel
+		count = count - 5'd1;
 	end
 	else if (!LRCK)
 	begin
 		running_right[count] <= in; //right channel
+		count = count - 5'd1;
 	end
 	
 	else if (count == 5'h00) //last one
 	begin
-	count <= 5'd23;
-	left <= running_left;
-	right <= running_right;
+	count = 5'd23;
+	left = running_left;
+	right = running_right;
 	end
-	else
-	count <= count - 5'd1;
 end
 
 endmodule : deserializer

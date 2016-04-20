@@ -3,7 +3,7 @@ module serializer
 	input SCK,
 	input [23:0] left,
 	input [23:0] right,
-	input begin_transmit,
+	input reset,
 	input LRCK,
 	input BCK,
 	output logic out
@@ -23,28 +23,28 @@ logic [4:0] count; // count from 00000 to 10111 (24)
 //assign lr_rise = (LRCK & !old_lrck);
 //assign lr_fall = (old_lrck & !LRCK);
 
-always @ (posedge BCK or posedge begin_transmit)
+always @ (posedge BCK or posedge reset)
 begin
 	//old_lrck = LRCK;
-	if (begin_transmit)
+	if (reset)
 	begin
-	count <= 5'd23;
+	count = 5'd23;
 	end
 	else if (LRCK) //left channel
 	begin
-		out <= left[count];
+		out = left[count];
+		count = count - 5'd1;
 	end
 	else if (!LRCK) //right channel
 	begin
 		out = right[count];
+		count = count - 5'd1;
 	end
 	
 	else if (count == 5'h00) //last one
 	begin
-	count <= 5'd23;
+	count = 5'd23;
 	end
-	else
-	count <= count - 5'd1;
 end
 
 

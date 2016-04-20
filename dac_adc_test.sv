@@ -49,17 +49,19 @@ f_s = 44.1 kHz
 
 Binary 2's complement MSB-first audio data
 */
+	logic BCK0;
+	assign BCK = BCK0;
 	assign SCK0 = (check) ? SCK : 1'b0;
 clk_div_2N div_8 //Divide SCK by 8 to get BCK, set defaults to 8
 (
 .clk(SCK0),
 .reset(begin_receive),
-.clk_out(BCK)
+.clk_out(BCK0)
 );
 
-clk_div_2N  #(.WIDTH(8), .N(9'd192)) div_384 //Since you do a division by 2N, 192 * 2 = 384
+clk_div_2N  #(.WIDTH(8), .N(8'd24)) div_384 //Since you do a division by 2N, 192 * 2 = 384
 (
-.clk(SCK0),
+.clk(BCK0),
 .reset(begin_receive),
 .clk_out(LRCK)
 );
@@ -78,7 +80,7 @@ clk_div_2N  #(.WIDTH(8), .N(9'd192)) div_384 //Since you do a division by 2N, 19
 	.SCK(SCK0),
 	.left(deserializedL),
 	.right(deserializedR),
-	.begin_transmit(begin_transmit),
+	.reset(reset),
 	.LRCK(LRCK),
 	.BCK(BCK),
 	.out(DAC_data)
@@ -98,7 +100,7 @@ clk_div_2N  #(.WIDTH(8), .N(9'd192)) div_384 //Since you do a division by 2N, 19
 	(
 	.SCK(SCK0),
 	.in(ADC_data),
-	.begin_receive(begin_receive),
+	.reset(reset),
 	.LRCK(LRCK),
 	.BCK(BCK),
 	.left(deserializedL),

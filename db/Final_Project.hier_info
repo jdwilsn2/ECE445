@@ -7,7 +7,8 @@ KEY[0] => LEDR[0].DATAIN
 KEY[1] => dac_adc_test_ctrl:test1.start
 KEY[1] => LEDR[1].DATAIN
 KEY[2] => ~NO_FANOUT~
-KEY[3] => KEY[3].IN2
+KEY[3] => _.IN1
+KEY[3] => _.IN1
 SW[0] => to_7seg.OUTPUTSELECT
 SW[0] => to_7seg.OUTPUTSELECT
 SW[0] => to_7seg.OUTPUTSELECT
@@ -147,6 +148,19 @@ GPIO[34] <> <UNC>
 GPIO[35] <> <GND>
 SMA_CLKOUT <= <GND>
 SMA_CLKIN => dac_adc_test:test0.SCK
+LCD_BLON <= <GND>
+LCD_DATA[0] <> <UNC>
+LCD_DATA[1] <> <UNC>
+LCD_DATA[2] <> <UNC>
+LCD_DATA[3] <> <UNC>
+LCD_DATA[4] <> <UNC>
+LCD_DATA[5] <> <UNC>
+LCD_DATA[6] <> <UNC>
+LCD_DATA[7] <> <UNC>
+LCD_ON <= <GND>
+LCD_EN <= <GND>
+LCD_RS <= <GND>
+LCD_RW <= <GND>
 
 
 |test|dac_adc_test:test0
@@ -199,9 +213,9 @@ deserializedR[20] <= deserializedR[20].DB_MAX_OUTPUT_PORT_TYPE
 deserializedR[21] <= deserializedR[21].DB_MAX_OUTPUT_PORT_TYPE
 deserializedR[22] <= deserializedR[22].DB_MAX_OUTPUT_PORT_TYPE
 deserializedR[23] <= deserializedR[23].DB_MAX_OUTPUT_PORT_TYPE
-reset => check.OUTPUTSELECT
-begin_transmit => begin_transmit.IN1
-begin_receive => begin_receive.IN3
+reset => reset.IN2
+begin_transmit => always0.IN0
+begin_receive => begin_receive.IN2
 ADC_data => ADC_data.IN1
 DAC_data <= serializer:to_DAC.out
 SCK => SCK0.DATAB
@@ -294,26 +308,26 @@ right[20] => Mux1.IN11
 right[21] => Mux1.IN10
 right[22] => Mux1.IN9
 right[23] => Mux1.IN8
-begin_transmit => count[0].PRESET
-begin_transmit => count[1].PRESET
-begin_transmit => count[2].PRESET
-begin_transmit => count[3].ACLR
-begin_transmit => count[4].PRESET
-begin_transmit => out~reg0.ENA
+reset => count[0].PRESET
+reset => count[1].PRESET
+reset => count[2].PRESET
+reset => count[3].ACLR
+reset => count[4].PRESET
+reset => out~reg0.ENA
 LRCK => out.OUTPUTSELECT
+BCK => out~reg0.CLK
 BCK => count[0].CLK
 BCK => count[1].CLK
 BCK => count[2].CLK
 BCK => count[3].CLK
 BCK => count[4].CLK
-BCK => out~reg0.CLK
 out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |test|dac_adc_test:test0|deserializer:to_ADC
 SCK => ~NO_FANOUT~
 in => ~NO_FANOUT~
-begin_receive => ~NO_FANOUT~
+reset => ~NO_FANOUT~
 LRCK => ~NO_FANOUT~
 BCK => right[0]~reg0.CLK
 BCK => right[1]~reg0.CLK
