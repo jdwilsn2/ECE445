@@ -1,0 +1,6 @@
+module digital_delay (input logic				Enable, Lrck, Reset,
+							 input logic	[7:0] 	Time, Repeats, Mix,
+							 input logic	[23:0]	D_In,
+							 output logic	[23:0]	D_Out);
+							
+	

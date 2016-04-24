@@ -1,0 +1,78 @@
+module tremolo_fsm (	input 					 Enable, Lrck, Reset,
+							input				[7:0]	 Rate, Duty_Cycle,
+							output			[23:0] D_Out);
+
+enum logic 	[2:0] {ON_CHECK, ON_PLUS, OFF_CHECK, OFF_PLUS, RESET, WAIT} state, next_state;			
+logic 		[16:0] Total_Period, On_Period, Off_Period, On_Count, On_Period,; 
+logic			[24:0] On_Product, Off_Product;
+
+	 
+	always_comb
+	begin
+		next_state = state;
+		
+		
+		
+		case (state)
+		
+			RESET : begin
+				next_state = WAIT;
+			end
+			
+			WAIT : begin
+				if (Enable)
+					next_state = ON_CHECK;
+			end
+			
+			ON_CHECK : begin
+				if (On_Count >= On_Period)
+					next_state = OFF_CHECK;
+				else
+					next_state = ON_PLUS;
+			end
+			
+			ON_PLUS : begin
+				next_state = ON_CHECK;
+			end
+			
+			OFF_CHECK : begin
+				if (Off_Count >= Off_Period)
+					next_state = ON_CHECK;
+				else
+					next_state = ON_PLUS;
+			end
+			
+			OFF_PLUS : begin
+				next_state = OFF_CHECK;
+			end
+			
+		endcase
+		
+		
+		
+		
+		
+	end
+	
+	always_ff (@ posedge Lrck, posedge Reset)
+	begin
+	
+		if (Reset)
+			state <= RESET;
+		else
+			state <= next_state;
+			
+	end
+	
+	always_comb
+	begin
+	
+		Total_Period = 17'd52083 + ~(Rate * 16'd184) + 1'b1;
+		
+	end
+
+endmodule
+
+
+
+	

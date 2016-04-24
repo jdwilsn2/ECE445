@@ -1,0 +1,3 @@
+module dd_multipler (input						 Enable, 	 
+												[15:0] Mem_In,
+							)

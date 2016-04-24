@@ -1,0 +1,4 @@
+module driver (input 	[23:0] D_Clipped,
+								[23:0] Volume,
+					output	[23:0] D_Boosted);
+					

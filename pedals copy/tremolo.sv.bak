@@ -1,0 +1,3 @@
+module tremolo (input 			Reset, Enable, Clk,
+							  [23:0] D_In, 
+					 )

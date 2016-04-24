@@ -1,0 +1,6 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,attenuator:LETSGOHAWKS|lpm_mult:Mult0|mult_obt:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,attenuator:LETSGOHAWKS|lpm_mult:Mult1|mult_kbt:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,tremolo_fsm:LETSGOCUBS|lpm_mult:Mult0|mult_lbt:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,attenuator:LETSGOHAWKS|lpm_mult:Mult0|mult_obt:auto_generated|mac_out4,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,attenuator:LETSGOHAWKS|lpm_mult:Mult1|mult_kbt:auto_generated|mac_out4,

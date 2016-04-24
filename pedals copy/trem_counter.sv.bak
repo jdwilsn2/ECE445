@@ -1,0 +1,8 @@
+module trem_counter (input 			 Increment, Clear,
+							output logic	[15:0] Count);
+							
+
+	always_comb
+	begin
+	
+		

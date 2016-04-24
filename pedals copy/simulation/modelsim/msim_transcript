@@ -1,0 +1,112 @@
+# Reading C:/altera/15.0/modelsim_ase/tcl/vsim/pref.tcl
+# do pedals_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+U:/ece445/pedals {U:/ece445/pedals/duty_lut.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:18:45 on Apr 23,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+U:/ece445/pedals" U:/ece445/pedals/duty_lut.sv 
+# -- Compiling module duty_lut
+# 
+# Top level modules:
+# 	duty_lut
+# End time: 17:18:46 on Apr 23,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+U:/ece445/pedals {U:/ece445/pedals/tremolo_fsm.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:18:46 on Apr 23,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+U:/ece445/pedals" U:/ece445/pedals/tremolo_fsm.sv 
+# -- Compiling module tremolo_fsm
+# 
+# Top level modules:
+# 	tremolo_fsm
+# End time: 17:18:46 on Apr 23,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+U:/ece445/pedals {U:/ece445/pedals/attenuator.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:18:46 on Apr 23,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+U:/ece445/pedals" U:/ece445/pedals/attenuator.sv 
+# -- Compiling module attenuator
+# 
+# Top level modules:
+# 	attenuator
+# End time: 17:18:46 on Apr 23,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+U:/ece445/pedals {U:/ece445/pedals/trem_counter.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:18:46 on Apr 23,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+U:/ece445/pedals" U:/ece445/pedals/trem_counter.sv 
+# -- Compiling module trem_counter
+# 
+# Top level modules:
+# 	trem_counter
+# End time: 17:18:47 on Apr 23,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+U:/ece445/pedals {U:/ece445/pedals/rate_lut.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:18:47 on Apr 23,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+U:/ece445/pedals" U:/ece445/pedals/rate_lut.sv 
+# -- Compiling module rate_lut
+# 
+# Top level modules:
+# 	rate_lut
+# End time: 17:18:47 on Apr 23,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+U:/ece445/pedals {U:/ece445/pedals/tremolo.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:18:47 on Apr 23,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+U:/ece445/pedals" U:/ece445/pedals/tremolo.sv 
+# -- Compiling module tremolo
+# 
+# Top level modules:
+# 	tremolo
+# End time: 17:18:49 on Apr 23,2016, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+U:/ece445/pedals {U:/ece445/pedals/testbench2.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:18:49 on Apr 23,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+U:/ece445/pedals" U:/ece445/pedals/testbench2.sv 
+# -- Compiling module testbench2
+# 
+# Top level modules:
+# 	testbench2
+# End time: 17:18:50 on Apr 23,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  testbench2
+# vsim -gui "+altera" -l msim_transcript -do "pedals_run_msim_rtl_verilog.do" 
+# Start time: 17:18:50 on Apr 23,2016
+# Loading sv_std.std
+# Loading work.testbench2
+# Loading work.tremolo
+# Loading work.rate_lut
+# Loading work.duty_lut
+# Loading work.tremolo_fsm
+# Loading work.attenuator
+# Loading work.trem_counter
+# ** Warning: (vsim-3015) U:/ece445/pedals/tremolo.sv(14): [PCDPC] - Port size (17) does not match connection size (15) for port 'Count'. The port definition is at: U:/ece445/pedals/trem_counter.sv(2).
+# 
+#         Region: /testbench2/FOR_YOUR_MODS/ON_COUNTER
+# ** Warning: (vsim-3015) U:/ece445/pedals/tremolo.sv(15): [PCDPC] - Port size (17) does not match connection size (15) for port 'Count'. The port definition is at: U:/ece445/pedals/trem_counter.sv(2).
+# 
+#         Region: /testbench2/FOR_YOUR_MODS/OFF_COUNTER
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 45 sec
+# End time: 17:22:37 on Apr 23,2016, Elapsed time: 0:03:47
+# Errors: 0, Warnings: 2

@@ -1,0 +1,9 @@
+
+State Machine - |tremolo|tremolo_fsm:LETSGOCUBS|state
+Name state.WAIT state.ON_CHECK state.OFF_PLUS state.OFF_CHECK state.ON_PLUS state.RESET 
+state.RESET 0 0 0 0 0 0 
+state.ON_PLUS 0 0 0 0 1 1 
+state.OFF_CHECK 0 0 0 1 0 1 
+state.OFF_PLUS 0 0 1 0 0 1 
+state.ON_CHECK 0 1 0 0 0 1 
+state.WAIT 1 0 0 0 0 1 

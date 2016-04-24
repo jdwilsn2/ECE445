@@ -1,0 +1,12 @@
+module dd_bigadder (input 			[23:0]	D_In,
+														Repeat1,
+														Repeat2,
+														Repeat3,
+						  output logic	[23:0]	D_Summed);
+	
+	
+	always_comb
+	begin
+	
+	end
+	

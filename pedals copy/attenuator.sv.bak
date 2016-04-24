@@ -1,0 +1,3 @@
+module attenuator (input 	[23:0] D_In,
+						 input			 Attenuate,
+						 )

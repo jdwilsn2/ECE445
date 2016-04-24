@@ -1,0 +1,6 @@
+module distortion (input 			 Reset,
+									[23:0] D_In,
+								   [23:0] Drive,
+									[23:0] Volume,
+									[23:0] Tone,
+						 output   )

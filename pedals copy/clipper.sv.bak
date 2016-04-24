@@ -1,0 +1,9 @@
+module clipper (input		[23:0] D_On,
+									[23:0] Drive,
+					 output		[23:0] D_Clipped);
+					 
+
+	always_comb
+	begin
+	
+		
