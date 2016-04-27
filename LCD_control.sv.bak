@@ -1,0 +1,6 @@
+module LCD_control
+(
+	input clk,
+);
+
+endmodule : LCD_control
